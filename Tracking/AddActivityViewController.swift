@@ -10,6 +10,8 @@ import UIKit
 
 class AddActivityViewController: UIViewController {
 
+    @IBOutlet weak var labelForSpeed: UILabel!
+    
     @IBOutlet weak var imageViewForPhoto: UIImageView!
     
     @IBOutlet weak var sliderDistance: UISlider!
@@ -18,9 +20,12 @@ class AddActivityViewController: UIViewController {
     @IBOutlet weak var labelCarrentForTime: UILabel!
     @IBOutlet weak var labelCarrentForDistance: UILabel!
     
+    let speed = Speed()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
     }
 
     @IBAction func addPhotoButtom(sender: AnyObject) {
@@ -29,23 +34,47 @@ class AddActivityViewController: UIViewController {
     
     @IBAction func sliderActionDistance(sender: UISlider) {
         let currentValue = Float(sender.value)
-        labelCarrentForDistance.text = "\(currentValue)" + "/21 km"
+        let correctvalue = String.localizedStringWithFormat("%.2f", currentValue)
+        let allDistance = 21
+        let distance:Float = Float(correctvalue)!
+        speed.saveDistance(distance)
+        
+        labelCarrentForDistance.text = "\(speed.getDistance())/\(allDistance) Km"
+        if speed.getTime() == 0 {
+            labelForSpeed.text = "Please set TIME "
+        }
+        else{
+            labelForSpeed.text = String.localizedStringWithFormat("%.2f %@", speed.calculateSpeed(),"Km/H")
+        }
+    }
+    
+    
+    @IBAction func sliderActionForTime(sender: UISlider) {
+        let maxTime = 6
+        let currentValue = Int(sender.value)
+        let hour = 60
+        let calculate = currentValue / hour
+        let drop = currentValue % hour
+        let dropFloat = Float(drop) * 0.01
+        let calculateFloat = Float(calculate)
+        let time:Float = dropFloat + calculateFloat
+        speed.saveTime(time)
+        
+        labelCarrentForTime.text = "\(speed.getTime())/\(maxTime) Hour"
+        if speed.getDistance() == 0 {
+            labelForSpeed.text = "Please set Distance"
+        }
+        else{
+            labelForSpeed.text = String.localizedStringWithFormat("%.2f %@", speed.calculateSpeed(),"Km/H")
+        }
+    }
+    func calculateSpeed(){
+    
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
