@@ -10,6 +10,9 @@ import UIKit
 
 class HistoryActivityViewController: UIViewController {
 
+    @IBAction func showHistoryView(sender: AnyObject) {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

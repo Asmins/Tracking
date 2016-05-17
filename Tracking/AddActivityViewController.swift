@@ -20,7 +20,9 @@ class AddActivityViewController: UIViewController {
     @IBOutlet weak var labelCarrentForTime: UILabel!
     @IBOutlet weak var labelCarrentForDistance: UILabel!
     
-    let speed = Speed()
+    
+    let statistics = Statistics()
+    let manager = Manager()
     
     
     override func viewDidLoad() {
@@ -37,14 +39,16 @@ class AddActivityViewController: UIViewController {
         let correctvalue = String.localizedStringWithFormat("%.2f", currentValue)
         let allDistance = 21
         let distance:Float = Float(correctvalue)!
-        speed.saveDistance(distance)
         
-        labelCarrentForDistance.text = "\(speed.getDistance())/\(allDistance) Km"
-        if speed.getTime() == 0 {
+        labelCarrentForDistance.text = "\(statistics.getDistance())/\(allDistance) Km"
+        
+        statistics.saveDistance(distance)
+        
+        if statistics.getTime() == 0 {
             labelForSpeed.text = "Please set TIME "
         }
         else{
-            labelForSpeed.text = String.localizedStringWithFormat("%.2f %@", speed.calculateSpeed(),"Km/H")
+            labelForSpeed.text = String.localizedStringWithFormat("%.2f %@", statistics.getAverageSpeed(),"Km/H")
         }
     }
     
@@ -58,23 +62,45 @@ class AddActivityViewController: UIViewController {
         let dropFloat = Float(drop) * 0.01
         let calculateFloat = Float(calculate)
         let time:Float = dropFloat + calculateFloat
-        speed.saveTime(time)
         
-        labelCarrentForTime.text = "\(speed.getTime())/\(maxTime) Hour"
-        if speed.getDistance() == 0 {
+        labelCarrentForTime.text = "\(statistics.getTime())/\(maxTime) Hour"
+        
+        statistics.saveTime(time)
+        
+        if statistics.getDistance() == 0 {
             labelForSpeed.text = "Please set Distance"
         }
         else{
-            labelForSpeed.text = String.localizedStringWithFormat("%.2f %@", speed.calculateSpeed(),"Km/H")
+            labelForSpeed.text = String.localizedStringWithFormat("%.2f %@",statistics.getAverageSpeed(),"Km/H")
         }
+ 
     }
-    func calculateSpeed(){
+    @IBAction func showStatisticsView(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
+    @IBAction func saveActivity(sender: AnyObject) {
+        
+        let dataForManager = Statistics()
+        dataForManager.getDistance()
+        dataForManager.getTime()
+        dataForManager.getAverageSpeed()
+        dataForManager.averageSpeed.setFloat(statistics.getAverageSpeed(), forKey:"speed")
+        dataForManager.averageSpeed.floatForKey("speed")
+        print(dataForManager.getDistance())
+        print(dataForManager.getTime())
+        print(dataForManager.averageSpeed.floatForKey("speed"))
+       
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        }
+    
+    }
     
 
 }

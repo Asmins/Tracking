@@ -9,7 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+/*
+    @IBAction func showActivityView(sender: AnyObject) {
+        let show = self.storyboard?.instantiateViewControllerWithIdentifier("IdActivity") as! AddActivityViewController
+        self.navigationController?.pushViewController(show, animated: true)
+    }
+  */  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

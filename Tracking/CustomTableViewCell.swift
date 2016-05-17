@@ -10,6 +10,11 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelForAvarageSpeed: UILabel!
+    @IBOutlet weak var labelForTime: UILabel!
+    @IBOutlet weak var labelForDistance: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
