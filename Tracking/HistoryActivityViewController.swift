@@ -10,13 +10,30 @@ import UIKit
 
 class HistoryActivityViewController: UIViewController {
 
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var averageSpeedLabel: UILabel!
+    
+    @IBOutlet weak var userImage: UIImageView!
+   
+    
+    var distance:Float = 0
+    var time:Float = 0
+    var averageSpeed:Float = 0
+    
     @IBAction func showHistoryView(sender: AnyObject) {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        distanceLabel.text = "\(self.distance)"
+        timeLabel.text = "\(self.time)"
+        averageSpeedLabel.text = "\(self.averageSpeed)"
     }
 
     override func didReceiveMemoryWarning() {

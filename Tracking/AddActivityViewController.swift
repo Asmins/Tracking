@@ -22,12 +22,11 @@ class AddActivityViewController: UIViewController {
     
     
     let statistics = Statistics()
-    let manager = Manager()
     
+    let manager = Manager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
     }
 
     @IBAction func addPhotoButtom(sender: AnyObject) {
@@ -80,17 +79,20 @@ class AddActivityViewController: UIViewController {
     }
     
     @IBAction func saveActivity(sender: AnyObject) {
-        
+     
+        /*
         let dataForManager = Statistics()
+        var array = [Float]()
         dataForManager.getDistance()
         dataForManager.getTime()
         dataForManager.getAverageSpeed()
         dataForManager.averageSpeed.setFloat(statistics.getAverageSpeed(), forKey:"speed")
         dataForManager.averageSpeed.floatForKey("speed")
+     
         print(dataForManager.getDistance())
         print(dataForManager.getTime())
         print(dataForManager.averageSpeed.floatForKey("speed"))
-       
+       */
         
         self.dismissViewControllerAnimated(true, completion: nil)
         

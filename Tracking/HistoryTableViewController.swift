@@ -8,41 +8,56 @@
 
 import UIKit
 
-class HistoryTableViewController: UITableViewController {
+class HistoryTableViewController:UITableViewController {
    
     var statistics = Statistics()
     
-    var manager = Manager()
+    
+    var array = [Statistics]()
+    
+    var dis = [Float]()
+    
+    var time = [Float]()
+    var avrspeed = [Float]()
     
     @IBOutlet var historyTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         getStatistics()
+        historyTableView.reloadData()
     }
   
     
     func getStatistics(){
-        statistics.getDistance()
-        statistics.getTime()
-        statistics.getAverageSpeed()
-        manager.appendArray(statistics)
+        array.append(statistics)
+        dis.append(statistics.getDistance())
+        time.append(statistics.getTime())
+        avrspeed.append(statistics.getAverageSpeed())
+        
+        print("Distance: \(dis)")
+        print("Time: \(time)")
+        print("Average Speed: \(avrspeed)")
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.traning.count
+        return array.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
-        cell.labelForDistance?.text = "\(manager.traning[indexPath.row].getDistance())"
-        cell.labelForTime?.text = "\(manager.traning[indexPath.row].getTime())"
-        cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (manager.traning[indexPath.row].getAverageSpeed()))
+        
+            cell.labelForDistance?.text = "\(dis[indexPath.row])"
+            cell.labelForTime?.text = "\(time[indexPath.row])"
+            cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (avrspeed[indexPath.row]))
+        
         return cell
     }
     

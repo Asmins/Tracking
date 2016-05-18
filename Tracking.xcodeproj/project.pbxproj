@@ -21,6 +21,7 @@
 		8499EA821CE3629D00DFA21D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8499EA801CE3629D00DFA21D /* LaunchScreen.storyboard */; };
 		8499EA8D1CE3629D00DFA21D /* TrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499EA8C1CE3629D00DFA21D /* TrackingTests.swift */; };
 		8499EA981CE3629D00DFA21D /* TrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499EA971CE3629D00DFA21D /* TrackingUITests.swift */; };
+		849D34A71CECB69400E97431 /* LolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D34A61CECB69400E97431 /* LolView.swift */; };
 		84B081BC1CEA14B700594A07 /* HistoryActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B081BB1CEA14B700594A07 /* HistoryActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		8499EA931CE3629D00DFA21D /* TrackingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8499EA971CE3629D00DFA21D /* TrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingUITests.swift; sourceTree = "<group>"; };
 		8499EA991CE3629D00DFA21D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		849D34A61CECB69400E97431 /* LolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LolView.swift; sourceTree = "<group>"; };
 		84B081BB1CEA14B700594A07 /* HistoryActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				84B081BB1CEA14B700594A07 /* HistoryActivityViewController.swift */,
 				8499EA7E1CE3629D00DFA21D /* Assets.xcassets */,
 				842E71D31CE9FE3B00D53C63 /* Main.storyboard */,
+				849D34A61CECB69400E97431 /* LolView.swift */,
 				8499EA801CE3629D00DFA21D /* LaunchScreen.storyboard */,
 				8499EA831CE3629D00DFA21D /* Info.plist */,
 				8499EA7B1CE3629D00DFA21D /* Tracking.xcdatamodeld */,
@@ -286,6 +289,7 @@
 				8499EA7D1CE3629D00DFA21D /* Tracking.xcdatamodeld in Sources */,
 				842E71CC1CE9F50300D53C63 /* HistoryTableViewController.swift in Sources */,
 				841F1F211CE4BE5300B22E17 /* AddActivityViewController.swift in Sources */,
+				849D34A71CECB69400E97431 /* LolView.swift in Sources */,
 				8402DD2A1CEB1AAF0011BAE1 /* StatisticsManager.swift in Sources */,
 				842E71CE1CE9F59C00D53C63 /* Statistics.swift in Sources */,
 				84B081BC1CEA14B700594A07 /* HistoryActivityViewController.swift in Sources */,
