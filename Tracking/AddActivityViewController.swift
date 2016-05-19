@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class AddActivityViewController: UIViewController {
 
@@ -24,6 +26,8 @@ class AddActivityViewController: UIViewController {
     let statistics = Statistics()
     
     let manager = Manager()
+    
+    var traning: Traning!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,30 +76,38 @@ class AddActivityViewController: UIViewController {
         else{
             labelForSpeed.text = String.localizedStringWithFormat("%.2f %@",statistics.getAverageSpeed(),"Km/H")
         }
- 
+       
+      
+        
+        
     }
     @IBAction func showStatisticsView(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func saveActivity(sender: AnyObject) {
-     
-        /*
-        let dataForManager = Statistics()
-        var array = [Float]()
-        dataForManager.getDistance()
-        dataForManager.getTime()
-        dataForManager.getAverageSpeed()
-        dataForManager.averageSpeed.setFloat(statistics.getAverageSpeed(), forKey:"speed")
-        dataForManager.averageSpeed.floatForKey("speed")
-     
-        print(dataForManager.getDistance())
-        print(dataForManager.getTime())
-        print(dataForManager.averageSpeed.floatForKey("speed"))
-       */
+       
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
+            traning = NSEntityDescription.insertNewObjectForEntityForName("Traning", inManagedObjectContext: managedObjectContext) as! Traning
+            traning.distance = statistics.getDistance()
+            traning.time = statistics.getTime()
+            traning.averageSpeed = statistics.getAverageSpeed()
+            
+            do{
+            try managedObjectContext.save()
+            }
+            catch{
+                print(error)
+                return
+            }
+            
+            print(traning.distance)
+            print(traning.time)
+            print(traning.averageSpeed)
+        }
+        
         
         self.dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
     

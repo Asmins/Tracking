@@ -11,32 +11,30 @@ import Foundation
 
 class Statistics {
     
-    var distance = NSUserDefaults.standardUserDefaults()
-    var time = NSUserDefaults.standardUserDefaults()
-    var averageSpeed = NSUserDefaults.standardUserDefaults()
+    var distance:Float = 0
+    var time:Float = 0
     
     var calculateAverageSpeed:Float{
-       return self.getDistance() / self.getTime()
+        return self.distance / time
     }
     
-    
     func saveDistance(dis:Float){
-        self.distance.setFloat(dis, forKey:"distance")
+        self.distance = dis
     }
     
     func getDistance() -> Float {
-        return distance.floatForKey("distance")
+        return distance
     }
     
     func saveTime(time:Float){
-        self.time.setFloat(time, forKey:"time")
+        self.time = time
     }
     func getTime() -> Float{
-        return time.floatForKey("time")
+        return time
     }
     
     func getAverageSpeed() -> Float {
-        averageSpeed.setFloat(self.calculateAverageSpeed, forKey: "speed")
-        return averageSpeed.floatForKey("speed")
+       return calculateAverageSpeed
     }
+
 }

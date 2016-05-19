@@ -58,7 +58,7 @@
                   moduleName = "Tracking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Tracking/Tracking/HistoryActivityViewController.swift"
-                  timestampString = "485275502.982703"
+                  timestampString = "485362304.776727"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -73,7 +73,7 @@
                   moduleName = "Tracking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Tracking/Tracking/HistoryActivityViewController.swift"
-                  timestampString = "485275502.983154"
+                  timestampString = "485362304.776992"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -88,7 +88,7 @@
                   moduleName = "Tracking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Tracking/Tracking/HistoryActivityViewController.swift"
-                  timestampString = "485275502.983581"
+                  timestampString = "485362304.777277"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
@@ -111,6 +111,38 @@
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tracking/AddActivityViewController.swift"
+            timestampString = "485362026.427504"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "saveActivity(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tracking/AddActivityViewController.swift"
+            timestampString = "485362295.40766"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "saveActivity(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
