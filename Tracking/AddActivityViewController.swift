@@ -13,19 +13,14 @@ import CoreData
 class AddActivityViewController: UIViewController {
 
     @IBOutlet weak var labelForSpeed: UILabel!
-    
     @IBOutlet weak var imageViewForPhoto: UIImageView!
-    
     @IBOutlet weak var sliderDistance: UISlider!
     @IBOutlet weak var sliderTime: UISlider!
-    
     @IBOutlet weak var labelCarrentForTime: UILabel!
     @IBOutlet weak var labelCarrentForDistance: UILabel!
     
     
     let statistics = Statistics()
-    
-    let manager = Manager()
     
     var traning: Traning!
     
@@ -94,17 +89,18 @@ class AddActivityViewController: UIViewController {
             traning.averageSpeed = statistics.getAverageSpeed()
             
             do{
-            try managedObjectContext.save()
+                try managedObjectContext.save()
             }
             catch{
                 print(error)
                 return
             }
-            
+            /*
             print(traning.distance)
             print(traning.time)
             print(traning.averageSpeed)
-        }
+            */
+ }
         
         
         self.dismissViewControllerAnimated(true, completion: nil)

@@ -7,18 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
-class HistoryTableViewController:UITableViewController {
+class HistoryTableViewController:UITableViewController,NSFetchedResultsControllerDelegate {
    
-    var statistics = Statistics()
+    var traning = [NSManagedObject]()
     
+    var fetchResultController:NSFetchedResultsController!
     
-    var array = [Statistics]()
-    
-    var dis = [Float]()
-    
-    var time = [Float]()
-    var avrspeed = [Float]()
     
     @IBOutlet var historyTableView: UITableView!
     
@@ -26,39 +22,51 @@ class HistoryTableViewController:UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
     }
+    
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        getStatistics()
-        historyTableView.reloadData()
-    }
-  
-    
-    func getStatistics(){
-        array.append(statistics)
-        dis.append(statistics.getDistance())
-        time.append(statistics.getTime())
-        avrspeed.append(statistics.getAverageSpeed())
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
-        print("Distance: \(dis)")
-        print("Time: \(time)")
-        print("Average Speed: \(avrspeed)")
+        let managedContext = appDelegate!.managedObjectContext
         
+        let fetchRequest  = NSFetchRequest(entityName: "Traning")
+        
+        
+        do{
+            let fetchedResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let result = fetchedResult{
+                traning = result
+            }else{
+                print("Error")
+            }
+            
+        }
+        catch{
+            print("Error")
+        }
+        self.historyTableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return traning.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
         
-            cell.labelForDistance?.text = "\(dis[indexPath.row])"
-            cell.labelForTime?.text = "\(time[indexPath.row])"
-            cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (avrspeed[indexPath.row]))
+            let valueTraning = traning[indexPath.row]
+        
+        
+            cell.labelForDistance?.text = "\(valueTraning.valueForKey("distance") as! Float)"
+            cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float)"
+            cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float))
         
         return cell
     }
+    
     
 }

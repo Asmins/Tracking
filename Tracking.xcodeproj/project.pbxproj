@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8402DD2A1CEB1AAF0011BAE1 /* StatisticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402DD291CEB1AAF0011BAE1 /* StatisticsManager.swift */; };
 		841F1F211CE4BE5300B22E17 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F1F201CE4BE5300B22E17 /* AddActivityViewController.swift */; };
 		842E71CC1CE9F50300D53C63 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E71CB1CE9F50300D53C63 /* HistoryTableViewController.swift */; };
 		842E71CE1CE9F59C00D53C63 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E71CD1CE9F59C00D53C63 /* Statistics.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8402DD291CEB1AAF0011BAE1 /* StatisticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsManager.swift; sourceTree = "<group>"; };
 		841F1F201CE4BE5300B22E17 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		842E71CB1CE9F50300D53C63 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		842E71CD1CE9F59C00D53C63 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				843DC9B51CE759EB00EFDA7A /* GoalsViewController.swift */,
 				842E71CB1CE9F50300D53C63 /* HistoryTableViewController.swift */,
 				842E71CD1CE9F59C00D53C63 /* Statistics.swift */,
-				8402DD291CEB1AAF0011BAE1 /* StatisticsManager.swift */,
 				842E71D61CE9FE5D00D53C63 /* CustomTableViewCell.swift */,
 				84B081BB1CEA14B700594A07 /* HistoryActivityViewController.swift */,
 				846FE31D1CEE02F7000DC3E7 /* Traning.swift */,
@@ -289,7 +286,6 @@
 				8499EA7D1CE3629D00DFA21D /* Tracking.xcdatamodeld in Sources */,
 				842E71CC1CE9F50300D53C63 /* HistoryTableViewController.swift in Sources */,
 				841F1F211CE4BE5300B22E17 /* AddActivityViewController.swift in Sources */,
-				8402DD2A1CEB1AAF0011BAE1 /* StatisticsManager.swift in Sources */,
 				842E71CE1CE9F59C00D53C63 /* Statistics.swift in Sources */,
 				84B081BC1CEA14B700594A07 /* HistoryActivityViewController.swift in Sources */,
 				843DC9B61CE759EB00EFDA7A /* GoalsViewController.swift in Sources */,
