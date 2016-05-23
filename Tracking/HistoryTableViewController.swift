@@ -13,7 +13,7 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
    
     var traning = [NSManagedObject]()
     
-    var fetchResultController:NSFetchedResultsController!
+    //var fetchResultController:NSFetchedResultsController!
     
     
     @IBOutlet var historyTableView: UITableView!
