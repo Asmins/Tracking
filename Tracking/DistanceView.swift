@@ -9,13 +9,13 @@
 import UIKit
 
 
-let maxValue = 10
+let maxValue = 500
 
 @IBDesignable
 
 class DistanceView: UIView {
 
-    @IBInspectable var counter: Int = 1
+    @IBInspectable var counter: Float = 1
     @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
     
