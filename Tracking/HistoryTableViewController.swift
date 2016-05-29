@@ -61,8 +61,19 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
             cell.labelForDistance?.text = "\(valueTraning.valueForKey("distance") as! Float)"
             cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float)"
             cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float))
+            
         
         return cell
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toActivity"{
+            if let indexPath = tableView.indexPathForSelectedRow{
+            let destination = segue.destinationViewController as! HistoryActivityViewController
+              
+            }
+        }
     }
     
     

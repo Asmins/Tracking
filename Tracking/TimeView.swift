@@ -8,6 +8,9 @@
 
 import UIKit
 
+@IBDesignable
+
+
 class TimeView: UIView {
     
     var maxValue = 50

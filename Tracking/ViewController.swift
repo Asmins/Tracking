@@ -15,6 +15,7 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
     var arrayFloat = [Float]()
     var sum:Float = 0
     @IBOutlet weak var distanceView: DistanceView!
+    @IBOutlet weak var timeView: TimeView!
     @IBOutlet weak var distanceLabel: UILabel!
     
 /*
@@ -26,19 +27,16 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         getDistance()
-        calculateSumInArray()
         
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        calculateSumInArray()
         distanceView.counter = sum
         
         distanceLabel.text = "\(distanceView.counter)"
     }
- 
     func getDistance(){
         
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate

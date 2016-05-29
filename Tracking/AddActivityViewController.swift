@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class AddActivityViewController: UIViewController {
+class AddActivityViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     @IBOutlet weak var labelForSpeed: UILabel!
     @IBOutlet weak var imageViewForPhoto: UIImageView!
@@ -22,16 +22,29 @@ class AddActivityViewController: UIViewController {
     
     let statistics = Statistics()
     
-    var traning: Traning!
+    let image = UIImagePickerController()
     
+    var traning: Traning!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func addPhotoButtom(sender: AnyObject) {
-        
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(image, animated: true, completion: nil)
     }
     
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+       
+        let info:NSDictionary = info as NSDictionary
+        let image:UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
+        
+        imageViewForPhoto.image = image
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     @IBAction func sliderActionDistance(sender: UISlider) {
         let currentValue = Float(sender.value)
         let correctvalue = String.localizedStringWithFormat("%.2f", currentValue)
@@ -87,6 +100,9 @@ class AddActivityViewController: UIViewController {
             traning.distance = statistics.getDistance()
             traning.time = statistics.getTime()
             traning.averageSpeed = statistics.getAverageSpeed()
+            
+            
+            traning.image = UIImagePNGRepresentation(self.imageViewForPhoto.image!)!
             
             do{
                 try managedObjectContext.save()
