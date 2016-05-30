@@ -61,7 +61,7 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
             cell.labelForDistance?.text = "\(valueTraning.valueForKey("distance") as! Float)"
             cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float)"
             cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float))
-            
+        
         
         return cell
     }
@@ -75,6 +75,7 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
                         targetController.distance = traning[indexPath.row].valueForKey("distance") as! Float
                         targetController.time = traning[indexPath.row].valueForKey("time") as! Float
                         targetController.averageSpeed = traning[indexPath.row].valueForKey("averageSpeed") as! Float
+                        targetController.image = traning[indexPath.row].valueForKey("image") as! NSData
                 }
             }
         }

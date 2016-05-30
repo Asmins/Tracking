@@ -100,8 +100,6 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
             traning.distance = statistics.getDistance()
             traning.time = statistics.getTime()
             traning.averageSpeed = statistics.getAverageSpeed()
-            
-            
             traning.image = UIImagePNGRepresentation(self.imageViewForPhoto.image!)!
             
             do{
@@ -111,12 +109,7 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
                 print(error)
                 return
             }
-            /*
-            print(traning.distance)
-            print(traning.time)
-            print(traning.averageSpeed)
-            */
- }
+        }
         
         
         self.dismissViewControllerAnimated(true, completion: nil)

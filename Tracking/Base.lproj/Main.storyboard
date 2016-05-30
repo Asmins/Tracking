@@ -356,7 +356,11 @@
                                 <action selector="showHistoryView:" destination="aeJ-Jh-fTf" id="vTn-IQ-KkK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Share-20" id="jDp-8y-rE3"/>
+                        <barButtonItem key="rightBarButtonItem" image="Share-20" id="jDp-8y-rE3">
+                            <connections>
+                                <action selector="shareAction:" destination="aeJ-Jh-fTf" id="len-vF-0JN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
