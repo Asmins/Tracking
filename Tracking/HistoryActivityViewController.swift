@@ -10,6 +10,7 @@ import UIKit
 
 class HistoryActivityViewController: UIViewController {
 
+    
     @IBOutlet weak var distanceLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -18,7 +19,10 @@ class HistoryActivityViewController: UIViewController {
     
     @IBOutlet weak var userImage: UIImageView!
    
-   
+    var distance:Float = 0
+    var time:Float = 0
+    var averageSpeed:Float = 0
+    
     
     @IBAction func showHistoryView(sender: AnyObject) {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
@@ -29,6 +33,10 @@ class HistoryActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        distanceLabel.text = "\(distance)"
+        timeLabel.text = "\(time)"
+        averageSpeedLabel.text = String.localizedStringWithFormat("%.2f", averageSpeed)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,14 +45,6 @@ class HistoryActivityViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }

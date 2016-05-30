@@ -68,13 +68,14 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toActivity"{
-            if let indexPath = tableView.indexPathForSelectedRow{
-            let destination = segue.destinationViewController as! HistoryActivityViewController
-              
+        if segue.identifier == "showNavController"{
+             if let indexPath = tableView.indexPathForSelectedRow{
+                    let destinationController = segue.destinationViewController as! UINavigationController
+                        let targetController = destinationController.topViewController as! HistoryActivityViewController
+                        targetController.distance = traning[indexPath.row].valueForKey("distance") as! Float
+                        targetController.time = traning[indexPath.row].valueForKey("time") as! Float
+                        targetController.averageSpeed = traning[indexPath.row].valueForKey("averageSpeed") as! Float
+                }
             }
         }
-    }
-    
-    
 }
