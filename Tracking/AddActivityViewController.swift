@@ -21,10 +21,13 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
     
     
     let statistics = Statistics()
-    
+    var traningValueFromBD = [NSManagedObject]()
+    var arrayForDistance = [Float]()
     let image = UIImagePickerController()
     
     var traning: Traning!
+    var sum:Float = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -94,13 +97,21 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
     }
     
     @IBAction func saveActivity(sender: AnyObject) {
-       
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
+        
+        getDistance()
+        
+            if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
             traning = NSEntityDescription.insertNewObjectForEntityForName("Traning", inManagedObjectContext: managedObjectContext) as! Traning
             traning.distance = statistics.getDistance()
             traning.time = statistics.getTime()
             traning.averageSpeed = statistics.getAverageSpeed()
             traning.image = UIImagePNGRepresentation(self.imageViewForPhoto.image!)!
+            arrayForDistance.append(statistics.getDistance())
+           
+            for i in 0..<arrayForDistance.count{
+                sum = sum + arrayForDistance[i]
+            }
+            traning.sumDistance = sum
             
             do{
                 try managedObjectContext.save()
@@ -109,6 +120,7 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
                 print(error)
                 return
             }
+            
         }
         
         
@@ -116,6 +128,34 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
     }
     
     
+    func getDistance(){
+      
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        
+        let managedContext = appDelegate!.managedObjectContext
+        
+        let fetchRequest  = NSFetchRequest(entityName: "Traning")
+        
+        
+        do{
+            let fetchedResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let result = fetchedResult{
+                traningValueFromBD = result
+            }else{
+                print("Error")
+            }
+            
+        }
+        catch{
+            print("Error")
+        }
+        
+        for value in traningValueFromBD{
+            arrayForDistance.append(value.valueForKey("distance") as! Float)
+        }
+      
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     

@@ -11,32 +11,28 @@ import CoreData
 
 class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
     
-    var traning = [NSManagedObject]()
+   // var traning = [NSManagedObject]()
     var arrayFloat = [Float]()
     var sum:Float = 0
     @IBOutlet weak var distanceView: DistanceView!
     @IBOutlet weak var timeView: TimeView!
     @IBOutlet weak var distanceLabel: UILabel!
-    
-/*
-    @IBAction func showActivityView(sender: AnyObject) {
-        let show = self.storyboard?.instantiateViewControllerWithIdentifier("IdActivity") as! AddActivityViewController
-        self.navigationController?.pushViewController(show, animated: true)
-    }
-  */  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDistance()
         
      }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        calculateSumInArray()
+        getDistance()
+        
         distanceView.counter = sum
         
         distanceLabel.text = "\(distanceView.counter)"
     }
+    
+    
     func getDistance(){
         
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
@@ -50,7 +46,10 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
             let fetchedResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             
             if let result = fetchedResult{
-                traning = result
+                for value in result{
+                    sum = value.valueForKey("sumDistance") as! Float
+                }
+                
             }else{
                 print("Error")
             }
@@ -59,26 +58,7 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         catch{
             print("Error")
         }
-        
-        for value in traning{
-            
-            arrayFloat.append(value.valueForKey("distance") as! Float)
-        }
-
+ 
     }
-    
-    func calculateSumInArray(){
-        for i in 0 ..< arrayFloat.count {
-            sum = sum + arrayFloat[i]
-            print(sum)
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
