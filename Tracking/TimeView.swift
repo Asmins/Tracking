@@ -8,19 +8,20 @@
 
 import UIKit
 
+
+let maxValueForTime = 100
+
 @IBDesignable
 
 
 class TimeView: UIView {
     
-    var maxValue = 50
-
-    @IBInspectable var counter: Int = 1
+   
+    @IBInspectable var counter: Float = 1
     @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
     
     override func drawRect(rect: CGRect) {
-        // let halfSize:CGFloat = max(bounds.size.width/2,bounds.size.height/2)
         
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         
@@ -40,7 +41,7 @@ class TimeView: UIView {
         
         let angleDifference: CGFloat = 2 * 3.14
         
-        let arcLengthPerGlass = angleDifference / CGFloat(maxValue)
+        let arcLengthPerGlass = angleDifference / CGFloat(maxValueForTime)
         
         let outlineEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
         

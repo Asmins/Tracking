@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class HistoryTableViewController:UITableViewController,NSFetchedResultsControllerDelegate {
-   
+    
     var traning = [NSManagedObject]()
     
     @IBOutlet var historyTableView: UITableView!
@@ -19,7 +19,7 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
     }
     
     
@@ -53,14 +53,14 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
         
-            let valueTraning = traning[indexPath.row]
+        let valueTraning = traning[indexPath.row]
         
         
-            cell.labelForDistance?.text = "\(valueTraning.valueForKey("distance") as! Float)"
-            cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float)"
-            cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float))
+        cell.labelForDistance?.text = "\(valueTraning.valueForKey("distance") as! Float)"
+        cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float)"
+        cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float))
         
         
         return cell
@@ -69,14 +69,14 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showNavController"{
-             if let indexPath = tableView.indexPathForSelectedRow{
-                    let destinationController = segue.destinationViewController as! UINavigationController
-                        let targetController = destinationController.topViewController as! HistoryActivityViewController
-                        targetController.distance = traning[indexPath.row].valueForKey("distance") as! Float
-                        targetController.time = traning[indexPath.row].valueForKey("time") as! Float
-                        targetController.averageSpeed = traning[indexPath.row].valueForKey("averageSpeed") as! Float
-                        targetController.image = traning[indexPath.row].valueForKey("image") as! NSData
-                }
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let destinationController = segue.destinationViewController as! UINavigationController
+                let targetController = destinationController.topViewController as! HistoryActivityViewController
+                targetController.distance = traning[indexPath.row].valueForKey("distance") as! Float
+                targetController.time = traning[indexPath.row].valueForKey("time") as! Float
+                targetController.averageSpeed = traning[indexPath.row].valueForKey("averageSpeed") as! Float
+                targetController.image = traning[indexPath.row].valueForKey("image") as! NSData
             }
         }
+    }
 }

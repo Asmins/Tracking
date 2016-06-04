@@ -11,25 +11,35 @@ import CoreData
 
 class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
     
-   // var traning = [NSManagedObject]()
     var arrayFloat = [Float]()
-    var sum:Float = 0
+    var sumDistance:Float = 0
+    var sumTime:Float = 0
+    
     @IBOutlet weak var distanceView: DistanceView!
-    @IBOutlet weak var timeView: TimeView!
     @IBOutlet weak var distanceLabel: UILabel!
-  
+    @IBOutlet weak var timeView: TimeView!
+    @IBOutlet weak var timeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     }
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         getDistance()
         
-        distanceView.counter = sum
+        distanceView.counter = sumDistance
+        timeView.counter = sumTime
         
-        distanceLabel.text = "\(distanceView.counter)"
+        if distanceView.counter == 0 && timeView.counter == 0 {
+            distanceView.counter = 1
+            timeView.counter = 1
+            timeLabel.text = "\(0)"
+            distanceLabel.text = "\(0)"
+         }else{
+            timeLabel.text = "\(timeView.counter)"
+            distanceLabel.text = "\(distanceView.counter)"
+        }
     }
     
     
@@ -39,7 +49,7 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         
         let managedContext = appDelegate!.managedObjectContext
         
-        let fetchRequest  = NSFetchRequest(entityName: "Traning")
+        let fetchRequest  = NSFetchRequest(entityName: "Goals")
         
         
         do{
@@ -47,7 +57,8 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
             
             if let result = fetchedResult{
                 for value in result{
-                    sum = value.valueForKey("sumDistance") as! Float
+                    sumDistance = value.valueForKey("sumDistance") as! Float
+                    sumTime = value.valueForKey("sumTime") as! Float
                 }
                 
             }else{
@@ -58,7 +69,7 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         catch{
             print("Error")
         }
- 
+        
     }
 }
 

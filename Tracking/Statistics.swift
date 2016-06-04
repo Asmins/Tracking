@@ -34,7 +34,7 @@ class Statistics {
     }
     
     func getAverageSpeed() -> Float {
-       return calculateAverageSpeed
+        return calculateAverageSpeed
     }
-
+    
 }

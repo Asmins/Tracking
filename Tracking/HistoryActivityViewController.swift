@@ -10,7 +10,7 @@ import UIKit
 import Social
 
 class HistoryActivityViewController: UIViewController {
-
+    
     
     @IBOutlet weak var distanceLabel: UILabel!
     
@@ -19,7 +19,7 @@ class HistoryActivityViewController: UIViewController {
     @IBOutlet weak var averageSpeedLabel: UILabel!
     
     @IBOutlet weak var userImage: UIImageView!
-   
+    
     var distance:Float = 0
     var time:Float = 0
     var averageSpeed:Float = 0
@@ -27,11 +27,11 @@ class HistoryActivityViewController: UIViewController {
     
     @IBAction func showHistoryView(sender: AnyObject) {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-   
+        
     }
     @IBAction func shareAction(sender: AnyObject) {
         let shareMenu  = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
-       
+        
         let shareInFacebook = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.Default , handler: { (action)-> Void in
             guard SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook)else{
                 let alertMessage = UIAlertController(title: "Login ERROR ", message: "Please check your login", preferredStyle: .Alert)
@@ -56,9 +56,9 @@ class HistoryActivityViewController: UIViewController {
                 return
             }
             
-                let twitterCompose = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-                twitterCompose.setInitialText("I ran \(self.distance) kilometers in \(self.time) hours" + "\n" + "And my average speed \(self.averageSpeed) km/h" + "\n" +   "I use application 'Tracking'")
-                twitterCompose.addImage(self.userImage.image)
+            let twitterCompose = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            twitterCompose.setInitialText("I ran \(self.distance) kilometers in \(self.time) hours" + "\n" + "And my average speed \(self.averageSpeed) km/h" + "\n" +   "I use application 'Tracking'")
+            twitterCompose.addImage(self.userImage.image)
             self.presentViewController(twitterCompose, animated: true, completion: nil)
             
         })
@@ -79,11 +79,11 @@ class HistoryActivityViewController: UIViewController {
         timeLabel.text = "\(time)"
         averageSpeedLabel.text = String.localizedStringWithFormat("%.2f", averageSpeed)
         userImage.image = UIImage(data: image)
-      }
-
-
+    }
     
-
-  
-
+    
+    
+    
+    
+    
 }

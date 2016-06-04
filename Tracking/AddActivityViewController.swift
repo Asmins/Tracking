@@ -11,7 +11,7 @@ import CoreData
 
 
 class AddActivityViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
-
+    
     @IBOutlet weak var labelForSpeed: UILabel!
     @IBOutlet weak var imageViewForPhoto: UIImageView!
     @IBOutlet weak var sliderDistance: UISlider!
@@ -23,15 +23,18 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
     let statistics = Statistics()
     var traningValueFromBD = [NSManagedObject]()
     var arrayForDistance = [Float]()
+    var arrayForTime = [Float]()
     let image = UIImagePickerController()
     
     var traning: Traning!
+    var goals: Goals!
+    
     var sum:Float = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     @IBAction func addPhotoButtom(sender: AnyObject) {
         image.delegate = self
         image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -40,7 +43,7 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
     
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-       
+        
         let info:NSDictionary = info as NSDictionary
         let image:UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
         
@@ -87,8 +90,8 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
         else{
             labelForSpeed.text = String.localizedStringWithFormat("%.2f %@",statistics.getAverageSpeed(),"Km/H")
         }
-       
-      
+        
+        
         
         
     }
@@ -100,18 +103,32 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
         
         getDistance()
         
-            if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
+            
             traning = NSEntityDescription.insertNewObjectForEntityForName("Traning", inManagedObjectContext: managedObjectContext) as! Traning
+            
+            goals = NSEntityDescription.insertNewObjectForEntityForName("Goals", inManagedObjectContext: managedObjectContext) as! Goals
+            
             traning.distance = statistics.getDistance()
             traning.time = statistics.getTime()
             traning.averageSpeed = statistics.getAverageSpeed()
             traning.image = UIImagePNGRepresentation(self.imageViewForPhoto.image!)!
+            
             arrayForDistance.append(statistics.getDistance())
-           
+            arrayForTime.append(statistics.getTime())
+            
             for i in 0..<arrayForDistance.count{
                 sum = sum + arrayForDistance[i]
             }
-            traning.sumDistance = sum
+            goals.sumDistance = sum
+            
+            sum = 0
+            
+            for i in 0..<arrayForTime.count{
+                sum = sum + arrayForTime[i]
+            }
+            goals.sumTime = sum
+            
             
             do{
                 try managedObjectContext.save()
@@ -129,7 +146,7 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
     
     
     func getDistance(){
-      
+        
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
         let managedContext = appDelegate!.managedObjectContext
@@ -153,13 +170,17 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
         
         for value in traningValueFromBD{
             arrayForDistance.append(value.valueForKey("distance") as! Float)
+            arrayForTime.append(value.valueForKey("time") as! Float)
         }
-      
+        
+        
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    
+        
     }
     
-
+    
 }

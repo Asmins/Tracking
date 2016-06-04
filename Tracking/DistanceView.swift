@@ -8,20 +8,17 @@
 
 import UIKit
 
-
-let maxValue = 500
+let maxValue = 100
 
 @IBDesignable
 
 class DistanceView: UIView {
-
+    
     @IBInspectable var counter: Float = 1
     @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
     
     override func drawRect(rect: CGRect) {
-       // let halfSize:CGFloat = max(bounds.size.width/2,bounds.size.height/2)
-       
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         
         let radius: CGFloat = max(bounds.width, bounds.height)
@@ -38,7 +35,7 @@ class DistanceView: UIView {
         counterColor.setStroke()
         path.stroke()
         
-        let angleDifference: CGFloat = 2 * 3.14 
+        let angleDifference: CGFloat = 2 * 3.14
         
         let arcLengthPerGlass = angleDifference / CGFloat(maxValue)
         
