@@ -32,8 +32,8 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         timeView.counter = sumTime
         
         if distanceView.counter == 0 && timeView.counter == 0 {
-            distanceView.counter = 1
-            timeView.counter = 1
+            distanceView.counter = 0.1
+            timeView.counter = 0.1
             timeLabel.text = "\(0)"
             distanceLabel.text = "\(0)"
          }else{

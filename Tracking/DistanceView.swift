@@ -35,6 +35,7 @@ class DistanceView: UIView {
         counterColor.setStroke()
         path.stroke()
         
+        
         let angleDifference: CGFloat = 2 * 3.14
         
         let arcLengthPerGlass = angleDifference / CGFloat(maxValue)
@@ -49,6 +50,8 @@ class DistanceView: UIView {
         outlineColor.setStroke()
         outlinePath.lineWidth = 15.0
         outlinePath.stroke()
+
+        
     }
     
     
