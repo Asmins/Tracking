@@ -105,7 +105,7 @@
                                                         <color key="value" red="0.78100961538461533" green="0.0073116210957880718" blue="0.0" alpha="0.80013469827586203" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="counter">
-                                                        <real key="value" value="0.0"/>
+                                                        <real key="value" value="50"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -391,14 +391,10 @@
                                     <segment title="Month"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="0.0" blue="0.0093617555427760735" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentActionController:" destination="qnJ-Ig-ODc" eventType="valueChanged" id="n2L-HW-b5c"/>
+                                </connections>
                             </segmentedControl>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCE-Ey-k46">
-                                <rect key="frame" x="0.0" y="161" width="375" height="175"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="1o5-Uf-JMr"/>
-                                    <constraint firstAttribute="width" constant="375" id="sat-xu-nYD"/>
-                                </constraints>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-XQ-89s">
                                 <rect key="frame" x="120" y="135" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -417,21 +413,56 @@
                                     <constraint firstAttribute="width" constant="375" id="5xb-y0-Xii"/>
                                     <constraint firstAttribute="height" constant="216" id="eX6-Sh-nLq"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="qnJ-Ig-ODc" id="Unc-0L-u9g"/>
+                                    <outlet property="delegate" destination="qnJ-Ig-ODc" id="Mj7-68-UfF"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASO-fv-Mqq">
+                                <rect key="frame" x="243" y="238" width="116" height="20"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioz-fQ-twG">
+                                <rect key="frame" x="246" y="469" width="113" height="18"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCE-Ey-k46">
+                                <rect key="frame" x="0.0" y="161" width="375" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="1o5-Uf-JMr"/>
+                                    <constraint firstAttribute="width" constant="375" id="sat-xu-nYD"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="qnJ-Ig-ODc" id="c63-Ur-hx0"/>
+                                    <outlet property="delegate" destination="qnJ-Ig-ODc" id="nuE-MB-SIy"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ioz-fQ-twG" firstAttribute="leading" secondItem="m5L-FL-9X6" secondAttribute="leadingMargin" constant="230" id="0S3-VO-Elu"/>
+                            <constraint firstAttribute="trailing" secondItem="rCE-Ey-k46" secondAttribute="trailing" id="0xt-2v-Zgs"/>
                             <constraint firstAttribute="trailing" secondItem="Zrq-eH-MVO" secondAttribute="trailing" constant="120" id="1Kt-Af-mJs"/>
                             <constraint firstItem="yS1-aO-ReP" firstAttribute="top" secondItem="rjW-eg-sOx" secondAttribute="bottom" constant="30" id="1pn-yc-AT3"/>
+                            <constraint firstItem="Ioz-fQ-twG" firstAttribute="trailing" secondItem="m5L-FL-9X6" secondAttribute="trailingMargin" id="2Xr-P8-2DB"/>
                             <constraint firstItem="rjW-eg-sOx" firstAttribute="top" secondItem="Zrq-eH-MVO" secondAttribute="bottom" constant="10" id="2kY-g9-N5R"/>
                             <constraint firstAttribute="trailing" secondItem="rCE-Ey-k46" secondAttribute="trailing" id="44K-Nd-3YN"/>
+                            <constraint firstItem="Ioz-fQ-twG" firstAttribute="top" secondItem="rCE-Ey-k46" secondAttribute="bottom" constant="133" id="5if-cF-KIq"/>
+                            <constraint firstItem="rCE-Ey-k46" firstAttribute="leading" secondItem="m5L-FL-9X6" secondAttribute="leading" id="6CR-aB-OdD"/>
                             <constraint firstAttribute="trailing" secondItem="rjW-eg-sOx" secondAttribute="trailing" id="6aF-g8-WQb"/>
                             <constraint firstItem="2jb-w8-LYf" firstAttribute="leading" secondItem="m5L-FL-9X6" secondAttribute="leading" constant="20" id="80J-bB-cKe"/>
+                            <constraint firstItem="ASO-fv-Mqq" firstAttribute="top" secondItem="2jb-w8-LYf" secondAttribute="bottom" constant="120" id="9Rh-rk-rsf"/>
+                            <constraint firstItem="ASO-fv-Mqq" firstAttribute="trailing" secondItem="m5L-FL-9X6" secondAttribute="trailingMargin" id="HOW-Yh-oAG"/>
                             <constraint firstAttribute="trailing" secondItem="FSh-XQ-89s" secondAttribute="trailing" constant="120" id="RVQ-Mn-8v3"/>
                             <constraint firstAttribute="trailing" secondItem="2jb-w8-LYf" secondAttribute="trailing" constant="20" id="T7f-hR-Sir"/>
                             <constraint firstItem="FSh-XQ-89s" firstAttribute="leading" secondItem="m5L-FL-9X6" secondAttribute="leading" constant="120" id="VWe-ce-QgM"/>
                             <constraint firstItem="rCE-Ey-k46" firstAttribute="top" secondItem="FSh-XQ-89s" secondAttribute="bottom" constant="5" id="Vmp-Qc-fQf"/>
                             <constraint firstItem="Zrq-eH-MVO" firstAttribute="leading" secondItem="m5L-FL-9X6" secondAttribute="leading" constant="120" id="Vq1-Zr-jGB"/>
+                            <constraint firstItem="ASO-fv-Mqq" firstAttribute="leading" secondItem="m5L-FL-9X6" secondAttribute="leadingMargin" constant="227" id="YGF-54-DlK"/>
                             <constraint firstItem="2jb-w8-LYf" firstAttribute="top" secondItem="Kwn-BP-uTv" secondAttribute="bottom" constant="23" id="fsh-1d-oXr"/>
                             <constraint firstItem="Zrq-eH-MVO" firstAttribute="top" secondItem="rCE-Ey-k46" secondAttribute="bottom" constant="5" id="iQG-Hr-J7L"/>
                             <constraint firstItem="FSh-XQ-89s" firstAttribute="top" secondItem="2jb-w8-LYf" secondAttribute="bottom" constant="17" id="k9o-g7-dHs"/>
@@ -441,6 +472,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Goals" id="cP4-Uu-iNo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pickerViewDistance" destination="rCE-Ey-k46" id="47l-Ux-N2j"/>
+                        <outlet property="pickervViewTime" destination="rjW-eg-sOx" id="uc1-8A-Iac"/>
+                        <outlet property="segmentControler" destination="2jb-w8-LYf" id="D7x-zr-1rl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhA-PD-9u5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
