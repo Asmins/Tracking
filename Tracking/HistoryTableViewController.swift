@@ -58,7 +58,7 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
         let valueTraning = traning[indexPath.row]
         
         
-        cell.labelForDistance?.text = "\(valueTraning.valueForKey("distance") as! Float)"
+        cell.labelForDistance?.text = String.localizedStringWithFormat("%.2f", valueTraning.valueForKey("distance") as! Float)
         cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float)"
         cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float))
         

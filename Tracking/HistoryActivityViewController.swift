@@ -41,7 +41,7 @@ class HistoryActivityViewController: UIViewController {
             }
             
             let facebookComposer = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-            facebookComposer.setInitialText("I ran \(self.distance) kilometers in \(self.time) hours" + "\n" + "And my average speed \(self.averageSpeed) km/h" + "\n" +   "I use application 'Tracking' ")
+            facebookComposer.setInitialText("I ran \(String.localizedStringWithFormat("%.2f", self.distance)) kilometers in \(self.time) hours" + "\n" + "And my average speed \(String.localizedStringWithFormat("%.2f", self.averageSpeed)) km/h" + "\n" +   "I use application 'Tracking' ")
             facebookComposer.addImage(self.userImage.image)
             
             self.presentViewController(facebookComposer, animated: true, completion: nil)
@@ -57,7 +57,7 @@ class HistoryActivityViewController: UIViewController {
             }
             
             let twitterCompose = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            twitterCompose.setInitialText("I ran \(self.distance) kilometers in \(self.time) hours" + "\n" + "And my average speed \(self.averageSpeed) km/h" + "\n" +   "I use application 'Tracking'")
+            twitterCompose.setInitialText("I ran \(String.localizedStringWithFormat("%.2f", self.distance)) kilometers in \(self.time) hours" + "\n" + "And my average speed \(String.localizedStringWithFormat("%.2f", self.averageSpeed)) km/h" + "\n" +   "I use application 'Tracking'")
             twitterCompose.addImage(self.userImage.image)
             self.presentViewController(twitterCompose, animated: true, completion: nil)
             
@@ -75,7 +75,7 @@ class HistoryActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        distanceLabel.text = "\(distance)"
+        distanceLabel.text = String.localizedStringWithFormat("%.2f", distance)
         timeLabel.text = "\(time)"
         averageSpeedLabel.text = String.localizedStringWithFormat("%.2f", averageSpeed)
         userImage.image = UIImage(data: image)

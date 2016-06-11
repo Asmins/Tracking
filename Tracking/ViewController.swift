@@ -37,8 +37,9 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
             timeLabel.text = "\(0)"
             distanceLabel.text = "\(0)"
          }else{
+            distanceLabel.text = String.localizedStringWithFormat("%.2f", distanceView.counter)
             timeLabel.text = "\(timeView.counter)"
-            distanceLabel.text = "\(distanceView.counter)"
+            
         }
     }
     

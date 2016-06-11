@@ -14,7 +14,7 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
     
     @IBOutlet weak var labelForSpeed: UILabel!
     @IBOutlet weak var imageViewForPhoto: UIImageView!
-    @IBOutlet weak var sliderDistance: UISlider!
+    @IBOutlet weak var sliderForDistance: UISlider!
     @IBOutlet weak var sliderTime: UISlider!
     @IBOutlet weak var labelCarrentForTime: UILabel!
     @IBOutlet weak var labelCarrentForDistance: UILabel!
@@ -52,14 +52,13 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func sliderActionDistance(sender: UISlider) {
-        let currentValue = Float(sender.value)
-        let correctvalue = String.localizedStringWithFormat("%.2f", currentValue)
         let allDistance = 21
-        let distance:Float = Float(correctvalue)!
+        let currentValue = Float(sender.value)
+        let formattedFloat = String.localizedStringWithFormat("%.2f", currentValue)
         
-        labelCarrentForDistance.text = "\(statistics.getDistance())/\(allDistance) Km"
+        statistics.saveDistance(currentValue)
         
-        statistics.saveDistance(distance)
+        labelCarrentForDistance.text = "\(formattedFloat)/\(allDistance) Km"
         
         if statistics.getTime() == 0 {
             labelForSpeed.text = "Please set TIME "
@@ -67,8 +66,8 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
         else{
             labelForSpeed.text = String.localizedStringWithFormat("%.2f %@", statistics.getAverageSpeed(),"Km/H")
         }
+
     }
-    
     
     @IBAction func sliderActionForTime(sender: UISlider) {
         let maxTime = 6
