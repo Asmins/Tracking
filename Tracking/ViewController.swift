@@ -30,9 +30,8 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         
         distanceLabel.text = String.localizedStringWithFormat("%.2f", distanceView.counter)
         timeLabel.text = "\(timeView.counter)"
-        distanceView.reloadInputViews()
-       
-        
+        distanceView.setNeedsDisplay()
+        timeView.setNeedsDisplay()
     }
     
     

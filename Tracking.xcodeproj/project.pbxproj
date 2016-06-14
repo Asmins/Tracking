@@ -10,6 +10,7 @@
 		840BADEE1CF35031008F9C55 /* DistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BADED1CF35031008F9C55 /* DistanceView.swift */; };
 		840BADF01CF35F84008F9C55 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BADEF1CF35F84008F9C55 /* TimeView.swift */; };
 		841CC9AB1CFD9D1D000ED262 /* Traning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC9A91CFD9D1D000ED262 /* Traning.swift */; };
+		841CF8F21D1021320062765C /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CF8F11D1021320062765C /* GraphView.swift */; };
 		841F1F211CE4BE5300B22E17 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F1F201CE4BE5300B22E17 /* AddActivityViewController.swift */; };
 		842E71CC1CE9F50300D53C63 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E71CB1CE9F50300D53C63 /* HistoryTableViewController.swift */; };
 		842E71CE1CE9F59C00D53C63 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E71CD1CE9F59C00D53C63 /* Statistics.swift */; };
@@ -48,6 +49,7 @@
 		840BADED1CF35031008F9C55 /* DistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceView.swift; sourceTree = "<group>"; };
 		840BADEF1CF35F84008F9C55 /* TimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		841CC9A91CFD9D1D000ED262 /* Traning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Traning.swift; sourceTree = "<group>"; };
+		841CF8F11D1021320062765C /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		841F1F201CE4BE5300B22E17 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		842E71CB1CE9F50300D53C63 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		842E71CD1CE9F59C00D53C63 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				840BADED1CF35031008F9C55 /* DistanceView.swift */,
 				840BADEF1CF35F84008F9C55 /* TimeView.swift */,
 				841CC9A91CFD9D1D000ED262 /* Traning.swift */,
+				841CF8F11D1021320062765C /* GraphView.swift */,
 				8452B80E1D031F730052E7C6 /* Goals.swift */,
 				8499EA7E1CE3629D00DFA21D /* Assets.xcassets */,
 				842E71D31CE9FE3B00D53C63 /* Main.storyboard */,
@@ -298,6 +301,7 @@
 				841F1F211CE4BE5300B22E17 /* AddActivityViewController.swift in Sources */,
 				840BADEE1CF35031008F9C55 /* DistanceView.swift in Sources */,
 				842E71CE1CE9F59C00D53C63 /* Statistics.swift in Sources */,
+				841CF8F21D1021320062765C /* GraphView.swift in Sources */,
 				84B081BC1CEA14B700594A07 /* HistoryActivityViewController.swift in Sources */,
 				843DC9B61CE759EB00EFDA7A /* GoalsViewController.swift in Sources */,
 				841CC9AB1CFD9D1D000ED262 /* Traning.swift in Sources */,

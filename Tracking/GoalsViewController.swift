@@ -22,9 +22,9 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView == pickerViewDistance){
-         print(arrayDistance[row])
+        
         }else{
-            print(arrayTime[row])
+            
         }
     }
     
