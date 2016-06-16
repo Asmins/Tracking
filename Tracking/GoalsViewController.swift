@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
@@ -14,31 +15,59 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     @IBOutlet weak var segmentControler: UISegmentedControl!
     @IBOutlet weak var pickerViewDistance: UIPickerView!
     @IBOutlet weak var pickervViewTime: UIPickerView!
-    let arrayDistance = [50,60,70,180,90,100,110,120,130,140,150]
+    let arrayDistance = [50,60,70,80,90,100,110,120,130,140,150]
     let arrayTime = [6,12,18,24,30,36,40,46,52,58,64]
-    override func viewDidLoad() {
+    var distance = 0
+    var time = 0
+    var goals: Goals!
+        override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView == pickerViewDistance){
-        
+        self.distance = arrayDistance[row]
+            print(self.distance)
         }else{
-            
+            self.time = arrayTime[row]
+            print(self.time)
         }
     }
     
     @IBAction func segmentActionController(sender: AnyObject) {
+      
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
+            goals = NSEntityDescription.insertNewObjectForEntityForName("Goals", inManagedObjectContext: managedObjectContext) as! Goals
+            
         switch segmentControler.selectedSegmentIndex {
+            
         case 0:
-            print("Total")
-        case 1:
+            goals.distance = self.distance
+            goals.time = self.time
+            goals.numberOfSelector = 1
             print("Week")
-        case 2:
+        case 1:
+            goals.distance = self.distance
+            goals.time = self.time
             print("Month")
+            goals.numberOfSelector = 2
+        case 2:
+            goals.distance = self.distance
+            goals.time = self.time
+            print("Year")
+            goals.numberOfSelector = 3 
+            
         default:
             print("Error")
         }
+            do{
+                try managedObjectContext.save()
+            
+            }catch{
+                print("ERROR")
+                return
+            }
+    }
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

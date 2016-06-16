@@ -8,18 +8,48 @@
 
 import UIKit
 
-let maxValue = 100
-
+import CoreData
 @IBDesignable
 
 class DistanceView: UIView {
+    
+    var maxValue = [Int]()
+    var valueForDistance = 0
+    func getData(){
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        let managedContext = appDelegate!.managedObjectContext
+        
+        let fetchRequest =  NSFetchRequest(entityName: "Goals")
+        
+        do{
+            let fetchedResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let result = fetchedResult{
+                for value in result{
+                    maxValue.append(value.valueForKey("distance") as! Int)
+                    for i in 0 ..< maxValue.count {
+                        valueForDistance = maxValue[i]
+                        if valueForDistance != 0{
+                            break
+                        }
+                    }
+                }
+                
+            }
+        }
+        catch{
+            print("Error")
+        }
+       
+    }
+ 
     
     @IBInspectable var counter: Float = 0
     @IBInspectable var outlineColor: UIColor = UIColor.blueColor()
     @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
  
         override func drawRect(rect: CGRect) {
-            
+            getData()
             let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
             
             let radius: CGFloat = max(bounds.width, bounds.height)
@@ -37,7 +67,7 @@ class DistanceView: UIView {
             
             let angleDifference: CGFloat = 2 * 3.14
             
-            let arcLengthPerGlass = angleDifference / CGFloat(maxValue)
+            let arcLengthPerGlass = angleDifference / CGFloat(valueForDistance)
             
             let outlineEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
             

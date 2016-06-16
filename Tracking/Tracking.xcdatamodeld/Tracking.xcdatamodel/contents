@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G12a" minimumToolsVersion="Automatic">
     <entity name="Goals" representedClassName=".Goals" syncable="YES">
         <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="numberOfSelector" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="sumDistance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="sumTime" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -14,7 +15,7 @@
         <attribute name="time" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Goals" positionX="-63" positionY="18" width="128" height="120"/>
         <element name="Traning" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Goals" positionX="-63" positionY="18" width="128" height="105"/>
     </elements>
 </model>
