@@ -73,13 +73,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracking/GoalsViewController.swift"
-            timestampString = "487776585.745014"
+            filePath = "Tracking/AddActivityViewController.swift"
+            timestampString = "487800030.911242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "segmentActionController(_:)"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "getDistanceFromGoals()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tracking/AddActivityViewController.swift"
+            timestampString = "487800001.6298"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "saveActivity(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

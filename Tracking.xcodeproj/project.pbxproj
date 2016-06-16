@@ -12,12 +12,13 @@
 		841CC9AB1CFD9D1D000ED262 /* Traning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CC9A91CFD9D1D000ED262 /* Traning.swift */; };
 		841CF8F21D1021320062765C /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CF8F11D1021320062765C /* GraphView.swift */; };
 		841F1F211CE4BE5300B22E17 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F1F201CE4BE5300B22E17 /* AddActivityViewController.swift */; };
-		841F49551D12D1C10063AF5B /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F49531D12D1C10063AF5B /* Goals.swift */; };
 		842E71CC1CE9F50300D53C63 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E71CB1CE9F50300D53C63 /* HistoryTableViewController.swift */; };
 		842E71CE1CE9F59C00D53C63 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E71CD1CE9F59C00D53C63 /* Statistics.swift */; };
 		842E71D51CE9FE3B00D53C63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842E71D31CE9FE3B00D53C63 /* Main.storyboard */; };
 		842E71D71CE9FE5D00D53C63 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E71D61CE9FE5D00D53C63 /* CustomTableViewCell.swift */; };
 		843DC9B61CE759EB00EFDA7A /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DC9B51CE759EB00EFDA7A /* GoalsViewController.swift */; };
+		844B28971D133ACB00ED0DB1 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B28951D133ACB00ED0DB1 /* Goals.swift */; };
+		844B289B1D133AE400ED0DB1 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B28991D133AE400ED0DB1 /* Calculation.swift */; };
 		8499EA751CE3629D00DFA21D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499EA741CE3629D00DFA21D /* AppDelegate.swift */; };
 		8499EA771CE3629D00DFA21D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499EA761CE3629D00DFA21D /* ViewController.swift */; };
 		8499EA7D1CE3629D00DFA21D /* Tracking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8499EA7B1CE3629D00DFA21D /* Tracking.xcdatamodeld */; };
@@ -51,12 +52,13 @@
 		841CC9A91CFD9D1D000ED262 /* Traning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Traning.swift; sourceTree = "<group>"; };
 		841CF8F11D1021320062765C /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		841F1F201CE4BE5300B22E17 /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
-		841F49531D12D1C10063AF5B /* Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		842E71CB1CE9F50300D53C63 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		842E71CD1CE9F59C00D53C63 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		842E71D41CE9FE3B00D53C63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		842E71D61CE9FE5D00D53C63 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		843DC9B51CE759EB00EFDA7A /* GoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		844B28951D133ACB00ED0DB1 /* Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		844B28991D133AE400ED0DB1 /* Calculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		8499EA711CE3629D00DFA21D /* Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8499EA741CE3629D00DFA21D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8499EA761CE3629D00DFA21D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,8 +134,9 @@
 				840BADED1CF35031008F9C55 /* DistanceView.swift */,
 				840BADEF1CF35F84008F9C55 /* TimeView.swift */,
 				841CC9A91CFD9D1D000ED262 /* Traning.swift */,
+				844B28951D133ACB00ED0DB1 /* Goals.swift */,
+				844B28991D133AE400ED0DB1 /* Calculation.swift */,
 				841CF8F11D1021320062765C /* GraphView.swift */,
-				841F49531D12D1C10063AF5B /* Goals.swift */,
 				8499EA7E1CE3629D00DFA21D /* Assets.xcassets */,
 				842E71D31CE9FE3B00D53C63 /* Main.storyboard */,
 				8499EA801CE3629D00DFA21D /* LaunchScreen.storyboard */,
@@ -297,11 +300,12 @@
 				8499EA751CE3629D00DFA21D /* AppDelegate.swift in Sources */,
 				8499EA7D1CE3629D00DFA21D /* Tracking.xcdatamodeld in Sources */,
 				842E71CC1CE9F50300D53C63 /* HistoryTableViewController.swift in Sources */,
-				841F49551D12D1C10063AF5B /* Goals.swift in Sources */,
+				844B28971D133ACB00ED0DB1 /* Goals.swift in Sources */,
 				841F1F211CE4BE5300B22E17 /* AddActivityViewController.swift in Sources */,
 				840BADEE1CF35031008F9C55 /* DistanceView.swift in Sources */,
 				842E71CE1CE9F59C00D53C63 /* Statistics.swift in Sources */,
 				841CF8F21D1021320062765C /* GraphView.swift in Sources */,
+				844B289B1D133AE400ED0DB1 /* Calculation.swift in Sources */,
 				84B081BC1CEA14B700594A07 /* HistoryActivityViewController.swift in Sources */,
 				843DC9B61CE759EB00EFDA7A /* GoalsViewController.swift in Sources */,
 				841CC9AB1CFD9D1D000ED262 /* Traning.swift in Sources */,

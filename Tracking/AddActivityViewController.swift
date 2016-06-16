@@ -22,12 +22,14 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
     
     let statistics = Statistics()
     var traningValueFromBD = [NSManagedObject]()
+    var distanceValueFromGoals = [NSManagedObject]()
+    var goalsDistance = [Int]()
     var arrayForDistance = [Float]()
     var arrayForTime = [Float]()
     let image = UIImagePickerController()
     
     var traning: Traning!
-    var goals: Goals!
+    var calculate: Calculation!
     
     var sum:Float = 0
     
@@ -102,11 +104,13 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
         
         getDistance()
         
+        getDistanceFromGoals()
+        
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
             
             traning = NSEntityDescription.insertNewObjectForEntityForName("Traning", inManagedObjectContext: managedObjectContext) as! Traning
             
-            goals = NSEntityDescription.insertNewObjectForEntityForName("Goals", inManagedObjectContext: managedObjectContext) as! Goals
+            calculate = NSEntityDescription.insertNewObjectForEntityForName("Calculation", inManagedObjectContext: managedObjectContext) as! Calculation
             
             traning.distance = statistics.getDistance()
             traning.time = statistics.getTime()
@@ -119,14 +123,20 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
             for i in 0..<arrayForDistance.count{
                 sum = sum + arrayForDistance[i]
             }
-            goals.sumDistance = sum
             
+            calculate.sumDistance = sum
+           /*
+            goals.sumDistance = sum
+            goals.distance = goalsDistance.last!
+            print(goalsDistance.last)
+ */
             sum = 0
             
             for i in 0..<arrayForTime.count{
                 sum = sum + arrayForTime[i]
             }
-            goals.sumTime = sum
+            calculate.sumTime = sum
+           // goals.sumTime = sum
             
             
             do{
@@ -152,6 +162,7 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
         
         let fetchRequest  = NSFetchRequest(entityName: "Traning")
         
+        //let fetchRequestForGoals = NSFetchRequest(entityName: "Goals")
         
         do{
             let fetchedResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
@@ -171,10 +182,32 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
             arrayForDistance.append(value.valueForKey("distance") as! Float)
             arrayForTime.append(value.valueForKey("time") as! Float)
         }
+    }
+    
+    func getDistanceFromGoals(){
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
+        let managedContext = appDelegate!.managedObjectContext
         
-        
-        
+        let fetchRequest  = NSFetchRequest(entityName: "Goals")
+        do{
+            let fetchedResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let result = fetchedResult{
+                distanceValueFromGoals = result
+            }else{
+                print("Error")
+            }
+            
+        }
+        catch{
+            print("Error")
+        }
+
+        for value in distanceValueFromGoals{
+            goalsDistance.append(value.valueForKey("distance") as! Int)
+            print(goalsDistance)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

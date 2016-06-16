@@ -41,7 +41,7 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         
         let managedContext = appDelegate!.managedObjectContext
         
-        let fetchRequest  = NSFetchRequest(entityName: "Goals")
+        let fetchRequest  = NSFetchRequest(entityName: "Calculation")
         
         
         do{
@@ -63,5 +63,6 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         }
         
     }
+ 
 }
 

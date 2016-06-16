@@ -38,7 +38,7 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
       
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
             goals = NSEntityDescription.insertNewObjectForEntityForName("Goals", inManagedObjectContext: managedObjectContext) as! Goals
-            
+        
         switch segmentControler.selectedSegmentIndex {
             
         case 0:
@@ -51,7 +51,7 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             goals.time = self.time
             print("Month")
             goals.numberOfSelector = 2
-        case 2:
+            case 2:
             goals.distance = self.distance
             goals.time = self.time
             print("Year")
@@ -62,7 +62,7 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         }
             do{
                 try managedObjectContext.save()
-            
+                
             }catch{
                 print("ERROR")
                 return

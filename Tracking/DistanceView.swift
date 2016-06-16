@@ -13,8 +13,8 @@ import CoreData
 
 class DistanceView: UIView {
     
-    var maxValue = [Int]()
-    var valueForDistance = 0
+    var maxValue = 0
+    
     func getData(){
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         let managedContext = appDelegate!.managedObjectContext
@@ -25,14 +25,10 @@ class DistanceView: UIView {
             let fetchedResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             
             if let result = fetchedResult{
+                
                 for value in result{
-                    maxValue.append(value.valueForKey("distance") as! Int)
-                    for i in 0 ..< maxValue.count {
-                        valueForDistance = maxValue[i]
-                        if valueForDistance != 0{
-                            break
-                        }
-                    }
+                    maxValue = value.valueForKey("distance") as! Int
+                   print(value.valueForKey("distance") as! Int)
                 }
                 
             }
@@ -67,7 +63,7 @@ class DistanceView: UIView {
             
             let angleDifference: CGFloat = 2 * 3.14
             
-            let arcLengthPerGlass = angleDifference / CGFloat(valueForDistance)
+            let arcLengthPerGlass = angleDifference / CGFloat(maxValue)
             
             let outlineEndAngle = arcLengthPerGlass * CGFloat(counter) + startAngle
             

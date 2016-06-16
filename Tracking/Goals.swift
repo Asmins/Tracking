@@ -11,11 +11,7 @@ import CoreData
 
 
 class Goals: NSManagedObject {
-
-    
     @NSManaged var distance: NSNumber?
-    @NSManaged var sumDistance: NSNumber?
-    @NSManaged var sumTime: NSNumber?
-    @NSManaged var time: NSNumber?
     @NSManaged var numberOfSelector: NSNumber?
+    @NSManaged var time: NSNumber?
 }
