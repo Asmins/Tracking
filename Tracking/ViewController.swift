@@ -11,7 +11,8 @@ import CoreData
 
 class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
     
-    var arrayFloat = [Float]()
+    var arrayValueForDistance = [Float]()
+    var arrayValueForTime = [Float]()
     var sumDistance:Float = 0
     var sumTime:Float = 0
 
@@ -24,7 +25,7 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         super.viewWillAppear(animated)
         
         getDistance()
-        
+        appendArrays()
         distanceView.counter = sumDistance
         timeView.counter = sumTime
         
@@ -56,12 +57,37 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
             }else{
                 print("Error")
             }
+        
             
         }
         catch{
             print("Error")
         }
         
+    }
+    
+    func appendArrays(){
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        
+        let managedContext = appDelegate!.managedObjectContext
+        
+        let fetchRequest  = NSFetchRequest(entityName: "Traning")
+        
+        do{
+            let fetchResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let result = fetchResult{
+                for value in result{
+                    arrayValueForDistance.append(value.valueForKey("distance") as! Float)
+                    print(arrayValueForDistance)
+                    arrayValueForTime.append(value.valueForKey("time") as! Float)
+                    print(arrayValueForTime)
+                }
+            }
+        }
+        catch{
+            print("Error")
+        }
     }
  
 }

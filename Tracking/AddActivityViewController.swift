@@ -125,18 +125,13 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
             }
             
             calculate.sumDistance = sum
-           /*
-            goals.sumDistance = sum
-            goals.distance = goalsDistance.last!
-            print(goalsDistance.last)
- */
+           
             sum = 0
             
             for i in 0..<arrayForTime.count{
                 sum = sum + arrayForTime[i]
             }
             calculate.sumTime = sum
-           // goals.sumTime = sum
             
             
             do{
