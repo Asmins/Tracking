@@ -17,22 +17,29 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate,ChartV
     var sumTime:Float = 0
     var arrayTime = [Float]()
     var arraySpeed = [Float]()
-
+    var check = 0
     @IBOutlet weak var distanceView: DistanceView!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeView: TimeView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var viewForGraph: LineChartView!
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.viewForGraph.delegate = self
         self.viewForGraph.descriptionText = " "
         self.viewForGraph.backgroundColor = UIColor.yellowColor()
         self.viewForGraph.noDataText = " Please add you activity"
         
-        
-        
+
+    }
+    
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         getDistance()
         getDataFromTraning()
         chartData(arrayTime)
@@ -51,19 +58,23 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate,ChartV
     func chartData(time: [Float]){
         
         var yValue: [ChartDataEntry] = [ChartDataEntry]()
-        
+     
         for i in 0..<time.count{
             yValue.append(ChartDataEntry(value: Double(arraySpeed[i]), xIndex:i))
         }
         
         let set: LineChartDataSet = LineChartDataSet(yVals: yValue, label: "Speed")
-        
-        
+        set.setColor(UIColor.blackColor())
+        set.circleRadius = 0
+        set.lineWidth = 2
         var dataSet:[LineChartDataSet] = [LineChartDataSet]()
         dataSet.append(set)
         
         let data:LineChartData = LineChartData(xVals: time, dataSets:dataSet)
+        data.setValueTextColor(UIColor.yellowColor())
         self.viewForGraph.data = data
+        arraySpeed.removeAll()
+        arrayTime.removeAll()
     }
     
     
@@ -111,6 +122,7 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate,ChartV
                 
                 for value in result{
                     arraySpeed.append(value.valueForKey("averageSpeed") as! Float)
+                    
                     arrayTime.append(value.valueForKey("time") as! Float)
                 }
             }
