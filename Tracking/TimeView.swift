@@ -10,7 +10,6 @@ import UIKit
 
 import CoreData
 
-@IBDesignable
 
 
 class TimeView: UIView {
@@ -31,7 +30,6 @@ class TimeView: UIView {
                 
                 for value in result{
                     maxValueForTime = value.valueForKey("time") as! Int
-                    print(value.valueForKey("time") as! Int)
                 }
                 
             }

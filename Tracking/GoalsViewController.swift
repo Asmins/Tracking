@@ -27,10 +27,8 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView == pickerViewDistance){
         self.distance = arrayDistance[row]
-            print(self.distance)
         }else{
             self.time = arrayTime[row]
-            print(self.time)
         }
     }
     
@@ -45,16 +43,14 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             goals.distance = self.distance
             goals.time = self.time
             goals.numberOfSelector = 1
-            print("Week")
+            
         case 1:
             goals.distance = self.distance
             goals.time = self.time
-            print("Month")
             goals.numberOfSelector = 2
             case 2:
             goals.distance = self.distance
             goals.time = self.time
-            print("Year")
             goals.numberOfSelector = 3 
             
         default:

@@ -9,7 +9,6 @@
 import UIKit
 
 import CoreData
-@IBDesignable
 
 class DistanceView: UIView {
     
@@ -28,7 +27,6 @@ class DistanceView: UIView {
                 
                 for value in result{
                     maxValue = value.valueForKey("distance") as! Int
-                   print(value.valueForKey("distance") as! Int)
                 }
                 
             }

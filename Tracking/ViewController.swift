@@ -8,24 +8,35 @@
 
 import UIKit
 import CoreData
+import Charts
 
-class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
+class ViewController: UIViewController,NSFetchedResultsControllerDelegate,ChartViewDelegate{
     
-    var arrayValueForDistance = [Float]()
-    var arrayValueForTime = [Float]()
+  
     var sumDistance:Float = 0
     var sumTime:Float = 0
+    var arrayTime = [Float]()
+    var arraySpeed = [Float]()
 
     @IBOutlet weak var distanceView: DistanceView!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeView: TimeView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var viewForGraph: LineChartView!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.viewForGraph.delegate = self
+        self.viewForGraph.descriptionText = " "
+        self.viewForGraph.backgroundColor = UIColor.yellowColor()
+        self.viewForGraph.noDataText = " Please add you activity"
+        
+        
         
         getDistance()
-        appendArrays()
+        getDataFromTraning()
+        chartData(arrayTime)
+        
         distanceView.counter = sumDistance
         timeView.counter = sumTime
         
@@ -34,6 +45,27 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         distanceView.setNeedsDisplay()
         timeView.setNeedsDisplay()
     }
+    
+    
+
+    func chartData(time: [Float]){
+        
+        var yValue: [ChartDataEntry] = [ChartDataEntry]()
+        
+        for i in 0..<time.count{
+            yValue.append(ChartDataEntry(value: Double(arraySpeed[i]), xIndex:i))
+        }
+        
+        let set: LineChartDataSet = LineChartDataSet(yVals: yValue, label: "Speed")
+        
+        
+        var dataSet:[LineChartDataSet] = [LineChartDataSet]()
+        dataSet.append(set)
+        
+        let data:LineChartData = LineChartData(xVals: time, dataSets:dataSet)
+        self.viewForGraph.data = data
+    }
+    
     
     
     func getDistance(){
@@ -65,30 +97,28 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate {
         }
         
     }
-    
-    func appendArrays(){
+ 
+    func getDataFromTraning(){
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        
         let managedContext = appDelegate!.managedObjectContext
         
-        let fetchRequest  = NSFetchRequest(entityName: "Traning")
+        let fetchRequest =  NSFetchRequest(entityName: "Traning")
         
         do{
-            let fetchResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            let fetchedResult = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             
-            if let result = fetchResult{
+            if let result = fetchedResult{
+                
                 for value in result{
-                    arrayValueForDistance.append(value.valueForKey("distance") as! Float)
-                    print(arrayValueForDistance)
-                    arrayValueForTime.append(value.valueForKey("time") as! Float)
-                    print(arrayValueForTime)
+                    arraySpeed.append(value.valueForKey("averageSpeed") as! Float)
+                    arrayTime.append(value.valueForKey("time") as! Float)
                 }
             }
         }
         catch{
             print("Error")
         }
+        
     }
- 
 }
 
