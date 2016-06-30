@@ -52,8 +52,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="Q8O-15-zFv" secondAttribute="bottom" constant="61" id="Dn7-xr-Uex"/>
-                                                    <constraint firstItem="Q8O-15-zFv" firstAttribute="top" secondItem="Dp9-xD-yCU" secondAttribute="top" constant="61" id="TGj-jb-KFF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Q8O-15-zFv" secondAttribute="bottom" constant="51" id="Dn7-xr-Uex"/>
+                                                    <constraint firstItem="Q8O-15-zFv" firstAttribute="top" secondItem="Dp9-xD-yCU" secondAttribute="top" constant="71" id="TGj-jb-KFF"/>
                                                     <constraint firstAttribute="trailing" secondItem="Q8O-15-zFv" secondAttribute="trailing" constant="53" id="bdC-xJ-iOl"/>
                                                     <constraint firstItem="Q8O-15-zFv" firstAttribute="leading" secondItem="Dp9-xD-yCU" secondAttribute="leading" constant="53" id="fQ9-bW-naV"/>
                                                 </constraints>
@@ -62,7 +62,7 @@
                                                         <color key="value" red="0.083499276610000006" green="0.1203304831" blue="0.90588235859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                                        <color key="value" red="0.62200498361204049" green="0.78830072714649846" blue="0.90588235859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.62352941176470589" green="0.78823529411764703" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="counter">
                                                         <real key="value" value="0.0"/>
@@ -119,10 +119,10 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                                        <color key="value" red="1" green="0.006702585354823376" blue="0.081677075453615355" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.66223853720935666" green="0.78519726819138136" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
-                                                        <color key="value" red="0.78100961538461533" green="0.0073116210957880718" blue="0.0" alpha="0.80013469827586203" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.083499276610000006" green="0.1203304831" blue="0.90588235859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="counter">
                                                         <real key="value" value="0.0"/>
@@ -167,12 +167,12 @@
                                             <constraint firstItem="HnQ-Rn-GCO" firstAttribute="top" secondItem="rig-fH-Xsc" secondAttribute="top" constant="295" id="8FD-iG-o2x"/>
                                             <constraint firstItem="HnQ-Rn-GCO" firstAttribute="trailing" secondItem="rig-fH-Xsc" secondAttribute="trailingMargin" id="BoA-jD-UNc"/>
                                             <constraint firstItem="BxI-bJ-7iP" firstAttribute="leading" secondItem="rig-fH-Xsc" secondAttribute="leading" constant="8" id="Jbs-j6-Vaz"/>
-                                            <constraint firstItem="K60-Cw-bYA" firstAttribute="trailing" secondItem="rig-fH-Xsc" secondAttribute="trailing" constant="80" id="KKo-xP-lrT">
+                                            <constraint firstItem="K60-Cw-bYA" firstAttribute="trailing" secondItem="rig-fH-Xsc" secondAttribute="trailing" constant="-59" id="KKo-xP-lrT">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="-80"/>
                                             </constraint>
                                             <constraint firstItem="Dp9-xD-yCU" firstAttribute="top" secondItem="HnQ-Rn-GCO" secondAttribute="bottom" constant="8" id="NSN-ug-h7K"/>
                                             <constraint firstItem="HnQ-Rn-GCO" firstAttribute="leading" secondItem="UQX-wX-uAy" secondAttribute="trailing" constant="8" id="QIl-dl-6e2"/>
-                                            <constraint firstAttribute="bottom" secondItem="K60-Cw-bYA" secondAttribute="bottom" constant="387" id="QKt-uA-f8A"/>
+                                            <constraint firstAttribute="bottom" secondItem="K60-Cw-bYA" secondAttribute="bottom" constant="416" id="QKt-uA-f8A"/>
                                             <constraint firstItem="HnQ-Rn-GCO" firstAttribute="top" secondItem="xtU-xf-OzT" secondAttribute="bottom" constant="194" id="RSp-P7-TbO"/>
                                             <constraint firstAttribute="height" constant="667" id="RUm-HC-x6J"/>
                                             <constraint firstItem="HnQ-Rn-GCO" firstAttribute="top" secondItem="K60-Cw-bYA" secondAttribute="bottom" constant="15" id="TEM-FU-aB5"/>
@@ -180,7 +180,7 @@
                                             <constraint firstAttribute="bottom" secondItem="HnQ-Rn-GCO" secondAttribute="bottom" constant="237" id="dAz-3J-aem"/>
                                             <constraint firstItem="xtU-xf-OzT" firstAttribute="leading" secondItem="rig-fH-Xsc" secondAttribute="leading" constant="8" id="eWF-bU-hFT"/>
                                             <constraint firstItem="Dp9-xD-yCU" firstAttribute="leading" secondItem="BxI-bJ-7iP" secondAttribute="trailing" constant="8" id="eZK-en-jXD"/>
-                                            <constraint firstItem="HnQ-Rn-GCO" firstAttribute="top" secondItem="K60-Cw-bYA" secondAttribute="bottom" constant="15" id="etq-bS-M6W"/>
+                                            <constraint firstItem="HnQ-Rn-GCO" firstAttribute="top" secondItem="K60-Cw-bYA" secondAttribute="bottom" constant="44" id="etq-bS-M6W"/>
                                             <constraint firstItem="xtU-xf-OzT" firstAttribute="top" secondItem="rig-fH-Xsc" secondAttribute="top" constant="80" id="h5R-f6-9X2"/>
                                             <constraint firstItem="K60-Cw-bYA" firstAttribute="top" secondItem="rig-fH-Xsc" secondAttribute="top" constant="80" id="hIg-Tx-lsp"/>
                                             <constraint firstAttribute="trailing" secondItem="Dp9-xD-yCU" secondAttribute="trailing" constant="80" id="iAM-IQ-uOV"/>
@@ -471,7 +471,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jb-w8-LYf">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="2jb-w8-LYf">
                                 <rect key="frame" x="20" y="87" width="335" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="1sD-Cg-lMd"/>
@@ -483,7 +483,7 @@
                                     <segment title="Month"/>
                                     <segment title="Year"/>
                                 </segments>
-                                <color key="tintColor" red="1" green="0.0" blue="0.0093617555427760735" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.25658561737512464" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="1sD-Cg-lMd"/>

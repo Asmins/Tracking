@@ -27,6 +27,7 @@ class DistanceView: UIView {
                 
                 for value in result{
                     maxValue = value.valueForKey("distance") as! Int
+                
                 }
                 
             }
@@ -53,7 +54,7 @@ class DistanceView: UIView {
             let startAngle: CGFloat = (CGFloat(M_PI)*3) / 2
             let endAngle: CGFloat = 270
             
-            let path = UIBezierPath(arcCenter: center,radius: radius/2 - arcWidth ,startAngle: startAngle,endAngle: endAngle,clockwise: true)
+            let path = UIBezierPath(arcCenter: center, radius: radius / 2 - arcWidth, startAngle: startAngle,endAngle: endAngle,clockwise: true)
             
             path.lineWidth = arcWidth
             counterColor.setStroke()
@@ -77,18 +78,18 @@ class DistanceView: UIView {
                 
                 outlinePath.stroke()
                 
-            }else{
-            
-            let outlinePath = UIBezierPath(arcCenter: center,radius: radius/2 - 20.0,startAngle: startAngle,endAngle:outlineEndAngle,clockwise: true)
-            
-            outlinePath.addArcWithCenter(center,radius: radius/2 - arcWidth - 5,startAngle: outlineEndAngle,endAngle: startAngle,clockwise: false)
-            
-            outlinePath.closePath()
-            outlineColor.setStroke()
-            outlinePath.lineWidth = 15.0
-            
-            outlinePath.stroke()
-            
+            } else {
+                
+                let outlinePath = UIBezierPath(arcCenter: center,radius: radius/2 - 20.0,startAngle: startAngle,endAngle:outlineEndAngle,clockwise: true)
+                
+                outlinePath.addArcWithCenter(center,radius: radius/2 - arcWidth - 5,startAngle: outlineEndAngle,endAngle: startAngle,clockwise: false)
+                
+                outlinePath.closePath()
+                outlineColor.setStroke()
+                outlinePath.lineWidth = 15.0
+                
+                outlinePath.stroke()
+                
             }
         
             

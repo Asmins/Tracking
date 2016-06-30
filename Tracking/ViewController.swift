@@ -30,7 +30,7 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate,ChartV
         super.viewDidLoad()
         self.viewForGraph.delegate = self
         self.viewForGraph.descriptionText = " "
-        self.viewForGraph.backgroundColor = UIColor.yellowColor()
+        self.viewForGraph.backgroundColor = UIColor.whiteColor()
         self.viewForGraph.noDataText = " Please add you activity"
         
 
@@ -42,7 +42,11 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate,ChartV
         super.viewWillAppear(animated)
         getDistance()
         getDataFromTraning()
-        chartData(arrayTime)
+        
+        if arraySpeed.isEmpty{
+        }else{
+            chartData(arrayTime)
+        }
         
         distanceView.counter = sumDistance
         timeView.counter = sumTime
@@ -64,14 +68,14 @@ class ViewController: UIViewController,NSFetchedResultsControllerDelegate,ChartV
         }
         
         let set: LineChartDataSet = LineChartDataSet(yVals: yValue, label: "Speed")
-        set.setColor(UIColor.blackColor())
+        set.setColor(UIColor.blueColor())
         set.circleRadius = 0
         set.lineWidth = 2
         var dataSet:[LineChartDataSet] = [LineChartDataSet]()
         dataSet.append(set)
         
         let data:LineChartData = LineChartData(xVals: time, dataSets:dataSet)
-        data.setValueTextColor(UIColor.yellowColor())
+        data.setValueTextColor(UIColor.whiteColor())
         self.viewForGraph.data = data
         arraySpeed.removeAll()
         arrayTime.removeAll()

@@ -124,6 +124,9 @@ class AddActivityViewController: UIViewController,UINavigationControllerDelegate
                 sum = sum + arrayForDistance[i]
             }
             
+//            let wholeDistance = arrayForDistance.reduce(0, combine: +)
+        
+            
             calculate.sumDistance = sum
            
             sum = 0

@@ -31,7 +31,6 @@ class TimeView: UIView {
                 for value in result{
                     maxValueForTime = value.valueForKey("time") as! Int
                 }
-                
             }
         }
         catch{

@@ -24,46 +24,55 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         super.viewDidLoad()
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if (pickerView == pickerViewDistance){
-        self.distance = arrayDistance[row]
-        }else{
-            self.time = arrayTime[row]
-        }
-    }
-    
-    @IBAction func segmentActionController(sender: AnyObject) {
-      
+    func saveInDataBase(){
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext{
             goals = NSEntityDescription.insertNewObjectForEntityForName("Goals", inManagedObjectContext: managedObjectContext) as! Goals
-        
-        switch segmentControler.selectedSegmentIndex {
-            
-        case 0:
             goals.distance = self.distance
             goals.time = self.time
-            goals.numberOfSelector = 1
-            
-        case 1:
-            goals.distance = self.distance
-            goals.time = self.time
-            goals.numberOfSelector = 2
-            case 2:
-            goals.distance = self.distance
-            goals.time = self.time
-            goals.numberOfSelector = 3 
-            
-        default:
-            print("Error")
-        }
             do{
                 try managedObjectContext.save()
-                
             }catch{
                 print("ERROR")
                 return
             }
+        }
     }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if (pickerView == pickerViewDistance){
+            self.distance = arrayDistance[row]
+        }else{
+            self.time = arrayTime[row]
+        }
+       saveInDataBase()
+    }
+    @IBAction func segmentActionController(sender: AnyObject) {
+      
+        switch segmentControler.selectedSegmentIndex {
+        case 0:
+            pickerViewDistance.selectRow(3, inComponent: 0, animated: true)
+            self.distance = arrayDistance[3]
+            pickervViewTime.selectRow(3, inComponent: 0, animated: true)
+            self.time = arrayTime[3]
+            saveInDataBase()
+        case 1:
+            pickerViewDistance.selectRow(11, inComponent: 0, animated: true)
+            self.distance = arrayDistance[11]
+            pickervViewTime.selectRow(6, inComponent: 0, animated: true)
+            self.time = arrayTime[6]
+            saveInDataBase()
+        case 2:
+            pickerViewDistance.selectRow(16, inComponent: 0, animated: true)
+            pickervViewTime.selectRow(9, inComponent: 0, animated: true)
+            self.distance = arrayDistance[16]
+            self.time = arrayTime[9]
+            saveInDataBase()
+        default:
+            print("Error")
+        }
+         
+    
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -77,10 +86,12 @@ class GoalsViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView == pickerViewDistance){
             return "\(arrayDistance[row])"
+           
         }else{
             return "\(arrayTime[row])"
         }
     }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
