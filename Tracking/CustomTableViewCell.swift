@@ -14,6 +14,9 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var labelForTime: UILabel!
     @IBOutlet weak var labelForDistance: UILabel!
     
+    @IBOutlet weak var progressViewForDistance: UIProgressView!
+    @IBOutlet weak var progressViewForTime: UIProgressView!
+    @IBOutlet weak var progressVIewForSpeed: UIProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

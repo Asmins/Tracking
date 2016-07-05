@@ -10,21 +10,18 @@ import UIKit
 import CoreData
 
 class HistoryTableViewController:UITableViewController,NSFetchedResultsControllerDelegate {
-    
+   
     var traning = [NSManagedObject]()
     
+    let maxValueForDistance = 21
+    let maxValueForTime = 6
+    let maxValueForSpeed = 10
+    
     @IBOutlet var historyTableView: UITableView!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-    }
-    
-    
+  
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
         let managedContext = appDelegate!.managedObjectContext
@@ -57,11 +54,17 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
         
         let valueTraning = traning[indexPath.row]
         
+        cell.labelForDistance?.text = String.localizedStringWithFormat("%.2f", valueTraning.valueForKey("distance") as! Float) + "Km"
+    
+        cell.progressViewForDistance.setProgress(valueTraning.valueForKey("distance") as! Float / Float(maxValueForDistance), animated: true)
+    
+        cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float) Houre"
         
-        cell.labelForDistance?.text = String.localizedStringWithFormat("%.2f", valueTraning.valueForKey("distance") as! Float)
-        cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float)"
-        cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float))
+        cell.progressViewForTime.setProgress(valueTraning.valueForKey("time") as! Float / Float(maxValueForTime), animated: true)
         
+        cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float)) + "Km/h"
+        
+        cell.progressVIewForSpeed.setProgress(valueTraning.valueForKey("averageSpeed") as! Float / Float(maxValueForSpeed) , animated: true)
         
         return cell
     }
