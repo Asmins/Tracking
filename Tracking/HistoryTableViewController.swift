@@ -12,6 +12,8 @@ import CoreData
 class HistoryTableViewController:UITableViewController,NSFetchedResultsControllerDelegate {
    
     var traning = [NSManagedObject]()
+    var dataTraning = DataTraning()
+    var arrayDataTraning = [DataTraning]()
     
     let maxValueForDistance = 21
     let maxValueForTime = 6
@@ -34,6 +36,8 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
             
             if let result = fetchedResult{
                 traning = result
+                
+                
             }else{
                 print("Error")
             }
@@ -51,20 +55,25 @@ class HistoryTableViewController:UITableViewController,NSFetchedResultsControlle
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
+       
+       let valueTraning = traning[indexPath.row]
+       
+        dataTraning.distance = valueTraning.valueForKey("distance") as! Float
+        dataTraning.time = valueTraning.valueForKey("time") as! Float
+        dataTraning.speed = valueTraning.valueForKey("averageSpeed") as! Float
+        arrayDataTraning.append(dataTraning)
+       
+        cell.labelForDistance?.text = String.localizedStringWithFormat("%.2f", arrayDataTraning[indexPath.row].distance) + " Km"
         
-        let valueTraning = traning[indexPath.row]
-        
-        cell.labelForDistance?.text = String.localizedStringWithFormat("%.2f", valueTraning.valueForKey("distance") as! Float) + "Km"
+        cell.progressViewForDistance.setProgress(arrayDataTraning[indexPath.row].distance / Float(maxValueForDistance), animated: true)
     
-        cell.progressViewForDistance.setProgress(valueTraning.valueForKey("distance") as! Float / Float(maxValueForDistance), animated: true)
-    
-        cell.labelForTime?.text = "\(valueTraning.valueForKey("time") as! Float) Houre"
+        cell.labelForTime?.text = "\(arrayDataTraning[indexPath.row].time )" + " Hour"
         
-        cell.progressViewForTime.setProgress(valueTraning.valueForKey("time") as! Float / Float(maxValueForTime), animated: true)
+        cell.progressViewForTime.setProgress(arrayDataTraning[indexPath.row].time / Float(maxValueForTime), animated: true)
         
-        cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (valueTraning.valueForKey("averageSpeed") as! Float)) + "Km/h"
+        cell.labelForAvarageSpeed?.text = String.localizedStringWithFormat("%.2f", (arrayDataTraning[indexPath.row].time)) + " Km/h"
         
-        cell.progressVIewForSpeed.setProgress(valueTraning.valueForKey("averageSpeed") as! Float / Float(maxValueForSpeed) , animated: true)
+        cell.progressVIewForSpeed.setProgress(arrayDataTraning[indexPath.row].speed / Float(maxValueForSpeed) , animated: true)
         
         return cell
     }

@@ -27,6 +27,7 @@
 		8499EA8D1CE3629D00DFA21D /* TrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499EA8C1CE3629D00DFA21D /* TrackingTests.swift */; };
 		8499EA981CE3629D00DFA21D /* TrackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499EA971CE3629D00DFA21D /* TrackingUITests.swift */; };
 		84B081BC1CEA14B700594A07 /* HistoryActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B081BB1CEA14B700594A07 /* HistoryActivityViewController.swift */; };
+		84C6E9AD1D2D208B003211E8 /* DataTraning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E9AC1D2D208B003211E8 /* DataTraning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		8499EA971CE3629D00DFA21D /* TrackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingUITests.swift; sourceTree = "<group>"; };
 		8499EA991CE3629D00DFA21D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B081BB1CEA14B700594A07 /* HistoryActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryActivityViewController.swift; sourceTree = "<group>"; };
+		84C6E9AC1D2D208B003211E8 /* DataTraning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTraning.swift; sourceTree = "<group>"; };
 		9457E3D3A717D449C5122911 /* Pods_Tracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC03464E5A74664E219C50B5 /* Pods-Tracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracking.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tracking/Pods-Tracking.release.xcconfig"; sourceTree = "<group>"; };
 		E905D332B481B1AF7187CFB0 /* Pods-Tracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tracking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tracking/Pods-Tracking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				844B28991D133AE400ED0DB1 /* Calculation.swift */,
 				8499EA7E1CE3629D00DFA21D /* Assets.xcassets */,
 				842E71D31CE9FE3B00D53C63 /* Main.storyboard */,
+				84C6E9AC1D2D208B003211E8 /* DataTraning.swift */,
 				8499EA801CE3629D00DFA21D /* LaunchScreen.storyboard */,
 				8499EA831CE3629D00DFA21D /* Info.plist */,
 				8499EA7B1CE3629D00DFA21D /* Tracking.xcdatamodeld */,
@@ -371,6 +374,7 @@
 			files = (
 				842E71D71CE9FE5D00D53C63 /* CustomTableViewCell.swift in Sources */,
 				8499EA771CE3629D00DFA21D /* ViewController.swift in Sources */,
+				84C6E9AD1D2D208B003211E8 /* DataTraning.swift in Sources */,
 				8499EA751CE3629D00DFA21D /* AppDelegate.swift in Sources */,
 				8499EA7D1CE3629D00DFA21D /* Tracking.xcdatamodeld in Sources */,
 				842E71CC1CE9F50300D53C63 /* HistoryTableViewController.swift in Sources */,

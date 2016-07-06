@@ -296,43 +296,98 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="JNF-Ge-XU2">
-                                            <rect key="frame" x="288" y="0.0" width="70" height="40"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNF-Ge-XU2">
+                                            <rect key="frame" x="316" y="14" width="51" height="23"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.19 Houre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uo-SN-fkw">
-                                            <rect key="frame" x="248" y="45" width="110" height="40"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.19 Hr" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uo-SN-fkw">
+                                            <rect key="frame" x="311" y="57" width="56" height="23"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="distance-to-travel-between-two-points" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-kJ-SQa">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance-to-travel-between-two-points" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-kJ-SQa">
                                             <rect key="frame" x="10" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="Qx8-EJ-0mL"/>
+                                                <constraint firstAttribute="height" constant="40" id="dQ1-Dd-kBU"/>
+                                            </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="6la-50-29F">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="6la-50-29F">
                                             <rect key="frame" x="10" y="45" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="XSE-sH-0RV"/>
+                                                <constraint firstAttribute="width" constant="40" id="tRK-hW-Z6W"/>
+                                            </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="urgency" translatesAutoresizingMaskIntoConstraints="NO" id="Ojp-is-Hg1">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="urgency" translatesAutoresizingMaskIntoConstraints="NO" id="Ojp-is-Hg1">
                                             <rect key="frame" x="10" y="90" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="G6H-Re-GEY"/>
+                                                <constraint firstAttribute="height" constant="40" id="KRi-QH-vIT"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JA-8e-fj2" userLabel="Label For AvarageSpeed">
-                                            <rect key="frame" x="267" y="90" width="91" height="40"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-N9-3RV">
+                                            <rect key="frame" x="58" y="19" width="225" height="10"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="XiN-af-SVu"/>
+                                            </constraints>
+                                        </progressView>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7OO-AA-H9C">
+                                            <rect key="frame" x="58" y="65" width="225" height="10"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="KED-NJ-1g8"/>
+                                            </constraints>
+                                        </progressView>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="shk-zX-F9k">
+                                            <rect key="frame" x="58" y="105" width="225" height="10"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="UCE-rG-87i"/>
+                                            </constraints>
+                                        </progressView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="10 Km/h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JA-8e-fj2" userLabel="Label For AvarageSpeed">
+                                            <rect key="frame" x="307" y="95" width="60" height="28"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-N9-3RV">
-                                            <rect key="frame" x="58" y="19" width="222" height="2"/>
-                                        </progressView>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7OO-AA-H9C">
-                                            <rect key="frame" x="58" y="69" width="182" height="2"/>
-                                        </progressView>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="shk-zX-F9k">
-                                            <rect key="frame" x="58" y="109" width="201" height="2"/>
-                                        </progressView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3JA-8e-fj2" firstAttribute="top" secondItem="8Uo-SN-fkw" secondAttribute="bottom" constant="15" id="3aY-j5-tkG"/>
+                                        <constraint firstItem="XRM-N9-3RV" firstAttribute="top" secondItem="Jog-3V-2RU" secondAttribute="top" constant="19" id="6fM-Nv-nmC"/>
+                                        <constraint firstItem="Ojp-is-Hg1" firstAttribute="leading" secondItem="Jog-3V-2RU" secondAttribute="leading" constant="10" id="84H-j3-b7H"/>
+                                        <constraint firstItem="7EO-kJ-SQa" firstAttribute="leading" secondItem="Jog-3V-2RU" secondAttribute="leading" constant="10" id="8Gg-hW-YpY"/>
+                                        <constraint firstAttribute="bottom" secondItem="shk-zX-F9k" secondAttribute="bottom" constant="24" id="Ar3-hv-xfc"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ojp-is-Hg1" secondAttribute="bottom" constant="9" id="EF9-gL-EwH"/>
+                                        <constraint firstItem="7OO-AA-H9C" firstAttribute="top" secondItem="XRM-N9-3RV" secondAttribute="bottom" constant="36" id="EVZ-It-Tu2"/>
+                                        <constraint firstItem="7OO-AA-H9C" firstAttribute="leading" secondItem="Jog-3V-2RU" secondAttribute="leading" constant="58" id="FKN-4Q-Jeg"/>
+                                        <constraint firstItem="7EO-kJ-SQa" firstAttribute="top" secondItem="Jog-3V-2RU" secondAttribute="top" id="FVe-BN-C1D"/>
+                                        <constraint firstAttribute="trailing" secondItem="shk-zX-F9k" secondAttribute="trailing" constant="92" id="Fgg-ak-In5"/>
+                                        <constraint firstAttribute="trailing" secondItem="8Uo-SN-fkw" secondAttribute="trailing" constant="8" id="FlO-OM-KJ6"/>
+                                        <constraint firstAttribute="trailing" secondItem="JNF-Ge-XU2" secondAttribute="trailing" constant="8" id="GGl-fZ-gU7"/>
+                                        <constraint firstItem="Ojp-is-Hg1" firstAttribute="top" secondItem="6la-50-29F" secondAttribute="bottom" constant="5" id="LYN-lL-VHt"/>
+                                        <constraint firstItem="6la-50-29F" firstAttribute="leading" secondItem="Jog-3V-2RU" secondAttribute="leading" constant="10" id="Mrh-J8-qOw"/>
+                                        <constraint firstItem="8Uo-SN-fkw" firstAttribute="top" secondItem="JNF-Ge-XU2" secondAttribute="bottom" constant="20" id="Poj-JG-znR"/>
+                                        <constraint firstAttribute="trailing" secondItem="XRM-N9-3RV" secondAttribute="trailing" constant="92" id="Rre-1e-ZHD"/>
+                                        <constraint firstItem="shk-zX-F9k" firstAttribute="leading" secondItem="Jog-3V-2RU" secondAttribute="leading" constant="58" id="TeC-oh-AZ3"/>
+                                        <constraint firstItem="Ojp-is-Hg1" firstAttribute="top" secondItem="6la-50-29F" secondAttribute="bottom" constant="5" id="XeU-dt-fVq"/>
+                                        <constraint firstItem="8Uo-SN-fkw" firstAttribute="top" secondItem="JNF-Ge-XU2" secondAttribute="bottom" constant="20" id="YQo-BE-YAS"/>
+                                        <constraint firstItem="JNF-Ge-XU2" firstAttribute="top" secondItem="Jog-3V-2RU" secondAttribute="top" constant="14" id="YgC-zD-YSg"/>
+                                        <constraint firstAttribute="trailing" secondItem="3JA-8e-fj2" secondAttribute="trailing" constant="8" id="YvQ-m2-XoV"/>
+                                        <constraint firstAttribute="trailing" secondItem="7OO-AA-H9C" secondAttribute="trailing" constant="92" id="dSc-q9-qZP"/>
+                                        <constraint firstItem="6la-50-29F" firstAttribute="top" secondItem="7EO-kJ-SQa" secondAttribute="bottom" constant="5" id="mvY-cM-Hl1"/>
+                                        <constraint firstItem="3JA-8e-fj2" firstAttribute="top" secondItem="8Uo-SN-fkw" secondAttribute="bottom" constant="17" id="qAq-2g-1Nt"/>
+                                        <constraint firstAttribute="bottom" secondItem="3JA-8e-fj2" secondAttribute="bottom" constant="16" id="und-n2-MPV"/>
+                                        <constraint firstItem="XRM-N9-3RV" firstAttribute="leading" secondItem="Jog-3V-2RU" secondAttribute="leading" constant="58" id="vAf-O5-ozD"/>
+                                        <constraint firstItem="6la-50-29F" firstAttribute="top" secondItem="7EO-kJ-SQa" secondAttribute="bottom" constant="5" id="ycU-yU-HQ4"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="qAq-2g-1Nt"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="labelForAvarageSpeed" destination="3JA-8e-fj2" id="Y9q-eP-3EM"/>
